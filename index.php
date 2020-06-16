@@ -37,5 +37,5 @@ if(class_exists($nombre_controlador)){
 }else{
 	show_error();
 }
-
+ 
 include_once("view/partial/footer.php");
