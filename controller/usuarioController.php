@@ -6,7 +6,11 @@
         private $conexion;
 
         public function index(){
-            include_once("view/loginView.php");
+            $vista = "view/loginView.php";
+            if(isset($_SESSION['usuario'])){
+                $vista = "view/inicio" . $_SESSION['usuario']->rol . ".php";
+            }
+            include_once($vista);
         }
 
         public function registrar(){
@@ -54,11 +58,9 @@
                 $usuario = $usuario->login();
                 if($usuario){
                     $_SESSION['usuario'] = $usuario;
-                    if($usuario->rol == 'lector'){
-                        $vistaLector = "Location:".base_url."usuario/lector";
-                        header($vistaLector);
+                    $vistaInicio = "Location:".base_url."usuario/index";
+                        header($vistaInicio);
                         exit();
-                    }
                 }else{
                     $_SESSION['errorLogin'] = "error";
                 }
