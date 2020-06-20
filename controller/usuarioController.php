@@ -6,6 +6,10 @@
         private $conexion;
 
         public function index(){
+            include_once("view/indexView.php");
+        }
+
+        public function ingresar(){
             include_once("view/loginView.php");
         }
 
