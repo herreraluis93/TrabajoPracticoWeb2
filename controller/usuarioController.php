@@ -6,9 +6,9 @@
         private $conexion;
 
         public function index(){
-            $vista = "view/loginView.php";
-            if(isset($_SESSION['usuario'])){
-                $vista = "view/inicio" . $_SESSION['usuario']->rol . ".php";
+            $vista = "view/indexView.php";
+            	if(isset($_SESSION['usuario'])){
+                	$vista = "view/inicio" . $_SESSION['usuario']->rol . ".php";
             }
             include_once($vista);
         }
