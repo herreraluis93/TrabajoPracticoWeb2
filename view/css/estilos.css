@@ -12,7 +12,9 @@
 }
 
 .revistas{
-    width: 50px;
-    height: 70px;
-    background-color: black;
+
+}
+
+.w3-bar .w3-bar-item{
+    float: right;
 }

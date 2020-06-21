@@ -7,7 +7,7 @@
     <?php Utils::borrarSesion('errorLogin') ?>
 
 
-<form action="<?=base_url?>usuario/login" method="POST">
+<form action="<?=base_url?>usuario/validarLogin" method="POST">
     <label for="email">Email</label>
     <input type="text" name="email" required/><br/>
 

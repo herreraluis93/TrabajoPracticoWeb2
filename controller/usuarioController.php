@@ -48,7 +48,7 @@
             header("Location:".base_url.'usuario/registrar');
         }
 
-        public function login(){
+        public function validarLogin(){
             if(isset($_POST)){
                 //Identificar al usuario 
                 //consulta a la base de datos
@@ -70,6 +70,10 @@
 
         public function lector(){
             include_once("view/lectorView.php");
+        }
+
+        public function login(){
+            include_once("view/loginView.php");
         }
 
         public function logout(){

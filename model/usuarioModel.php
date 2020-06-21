@@ -32,8 +32,6 @@
             //Verifico si el usuario tiene el objeto usuario o false
             if($usuario){
                 $resultado = $usuario;
-            }else{
-                $resultado = false;
             }
             return $resultado;
         }

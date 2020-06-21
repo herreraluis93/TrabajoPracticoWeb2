@@ -1,8 +1,6 @@
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
     <div class="revistas">
-        eref
+        <h1>Revistas</h1>
     </div>    
     <div class="diario">
-
+        <h1>Diario</h1>
     </div>
-</div>

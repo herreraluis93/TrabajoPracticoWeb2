@@ -1,5 +1,5 @@
 
-<!-- End Page Content -->
+<!-- End Class w3-main -->
 </div>
 
 <!-- Footer -->

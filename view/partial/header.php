@@ -44,7 +44,7 @@
         <div class="w3-bar w3-blue w3-card" style="z-index:5;">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large">Inicio</a>
-            <a href="<?=base_url?>usuario/registrar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Registrar</a>
+            <a href="<?=base_url?>usuario/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ingresar</a>
         </div>
         <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
@@ -66,5 +66,4 @@
   
 <?php endif; ?>
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
