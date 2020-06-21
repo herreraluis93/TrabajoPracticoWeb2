@@ -46,6 +46,40 @@ class Database{
         return $resultado;
       }
 
+      public function querySelectSecciones($sql){
+        
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+
+        //guardo el resultado en un objeto mysqli_result
+        $usuario = $stmt->get_result();
+        if($usuario->num_rows != 0){
+            $resultado = $usuario->fetch_all(MYSQLI_NUM);
+        }else{
+            $resultado = false;
+        }
+
+        $stmt->close();
+        return $resultado;
+      }
+
+      public function querySelectPublicaciones($sql){
+        
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+
+        //guardo el resultado en un objeto mysqli_result
+        $usuario = $stmt->get_result();
+        if($usuario->num_rows != 0){
+            $resultado = $usuario->fetch_all(MYSQLI_NUM);
+        }else{
+            $resultado = false;
+        }
+
+        $stmt->close();
+        return $resultado;
+      }
+
     public function close(){
         $this->conexion->close();
     }
