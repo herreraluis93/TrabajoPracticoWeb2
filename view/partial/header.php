@@ -44,27 +44,28 @@
     <div class="w3-top">
         <div class="w3-bar w3-blue w3-card" style="z-index:5;">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large">Inicio</a>
+            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left;">InfoNete</a>
             <a href="<?=base_url?>usuario/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ingresar</a>
         </div>
-        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:45px;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-bar-block">
-    <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Index</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Insta-gramo</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Insta-reciclando</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Lanzar Dados</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contador de Visitas</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Mostrando Configuraciones</a>
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">La Matriz</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Palabras en un pajar</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Piedra papel o tijera</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Calcula Doris</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Packman</a> 
+    <u>Secciones</u> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ultimas Noticias</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Deportes</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Economia</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Opinion</a> 
+    <u>Revistas</u> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Decoracion</a> 
+    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Espectaculos</a>
   </div>
 </nav>
     </div>
   
 <?php endif; ?>
 
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:50px">

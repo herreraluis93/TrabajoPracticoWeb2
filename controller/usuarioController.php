@@ -80,5 +80,13 @@
             Utils::borrarSesion('usuario');
             header("Location:".base_url);
         }
+
+        public function revistas(){
+            include_once("view/revistasView.php");
+        }
+
+        public function diarios(){
+            include_once("view/diariosView.php");
+        }
     }
 ?>

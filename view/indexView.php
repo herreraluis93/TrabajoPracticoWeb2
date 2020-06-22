@@ -1,6 +1,10 @@
-    <div class="revistas">
-        <h1>Revistas</h1>
+<div class="contenedor"> 
+<a href="<?=base_url?>usuario/revistas">    
+<div class="revistas">
     </div>    
+</a>
+<a href="<?=base_url?>usuario/diarios">  
     <div class="diario">
-        <h1>Diario</h1>
     </div>
+    </a>
+</div>
