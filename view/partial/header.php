@@ -51,17 +51,18 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-bar-block">
     <u>Secciones</u> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ultimas Noticias</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Deportes</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Economia</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Opinion</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ultimas Noticias</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Deportes</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Economia</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a> 
+    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Opinion</a> 
     <u>Revistas</u> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Decoracion</a> 
-    <a href="<?=base_url?>usuario/cambiar" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Espectaculos</a>
+    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a> 
+    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Decoracion</a> 
+    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Espectaculos</a>
   </div>
 </nav>
     </div>
