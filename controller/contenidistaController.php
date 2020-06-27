@@ -23,14 +23,6 @@
                 $seccion = isset($_POST['seccion']) ? $_POST['seccion'] : false;
                 $publicacion = isset($_POST['publicacion']) ? $_POST['publicacion'] : false;
 
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                var_dump($_POST);
-                die();
-
                 if($titulo && $texto && $enlace && $georeferencia && $seccion && $publicacion){
                     $noticia = new NoticiaModel();
                     $noticia->setTitulo($_POST['titulo']);
@@ -39,9 +31,12 @@
                     $noticia->setGeoreferencia($_POST['georeferencia']);
                     $noticia->setSeccion($_POST['seccion']);
                     $noticia->setPublicacion($_POST['publicacion']);
-                    $valor = $noticia->guardar();
+                    $noticia->setIdUsuario($_SESSION['usuario']->id_usuario);
+                    $valor = $noticia->guardarNoticia();
                     if($valor){
                         $_SESSION['register'] = "Completo";
+                        echo "completo";
+                        die();
                     }else{
                         $_SESSION['register'] = "Fallo";
                     }

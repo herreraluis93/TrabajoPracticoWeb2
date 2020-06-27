@@ -14,13 +14,14 @@
     <input type="text" name="titulo" required/><br/>
 
     <label for="texto">Texto</label>
-    <input type="text" name="texto" required/><br/>
+    <textarea name="texto" cols="40" rows="5"></textarea> <br/>
 
     <label for="enlace">Enlace</label>
     <input type="text" name="enlace" required/><br/>
 
     <label for="georeferencia">Georeferencia</label>
-    <input type="text" name="georeferencia" required/></br>
+    <input type="text" name="georeferencia" required/><br/>
+    <div id="map"></div>
 
     <select name="seccion">
     <?php

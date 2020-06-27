@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?=base_url?>view/css/estilos.css" />
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUaKDrKqot3_HqieO1CBktUN-O2D5c69Q&callback=initMap&libraries=&v=weekly" defer></script>
+<script src="<?=base_url?>view/js/javascript.js"></script>
 <body>
 
 <!-- Navbar -->
