@@ -88,6 +88,17 @@ class Database{
         return $resultado;
       }
 
+      public function queryInsertarPublicacion($sql,$nombre,$tipo,$fechaPublicacion,$numero){
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("sssi",$nombre,$tipo,$fechaPublicacion,$numero);
+        $resultado = $stmt->execute();
+        $stmt->close();
+        return $resultado;
+
+        $stmt->close();
+        return $resultado;
+      }
+
     public function close(){
         $this->conexion->close();
     }

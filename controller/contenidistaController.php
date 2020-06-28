@@ -1,11 +1,13 @@
 <?php
     require_once 'model/contenidistaModel.php';
     require_once 'model/noticiaModel.php';
+    require_once 'model/publicacionModel.php';
 
     class ContenidistaController{
 
         private $conexion;
 
+        //******************NOTICIA*************************************************************************
         public function crearNoticia(){
             $noticia = new NoticiaModel();
             $secciones = $noticia->obtenerSecciones();
@@ -96,6 +98,8 @@
             header("Location:".base_url.'usuario/registrar');
         }
 
+
+//******************LOGIN/LOGOUT*********************************************************************
         public function validarLogin(){
             if(isset($_POST)){
                 //Identificar al usuario 
@@ -128,5 +132,41 @@
             Utils::borrarSesion('usuario');
             header("Location:".base_url);
         }
+
+        //******************PUBLICACION*********************************************************************
+        public function crearPublicacion(){
+            include_once("view/crearPublicacion.php");
+        }
+
+        public function guardarPublicacion(){
+            if(isset($_POST)){
+                //hacer las validaciones de input
+                $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+                $tipoPublicacion = isset($_POST['tipoPublicacion']) ? $_POST['tipoPublicacion'] : false;
+                $fecha = isset($_POST['fecha']) ? $_POST['fecha'] : false;
+                $numero = isset($_POST['numero']) ? $_POST['numero'] : false;
+
+                if($numero && $tipoPublicacion && $fecha && $numero){
+                    $publicacion = new PublicacionModel();
+                    $publicacion->setNombre($_POST['nombre']);
+                    $publicacion->setTipo($_POST['tipoPublicacion']);
+                    $publicacion->setFechaPublicacion($_POST['fecha']);
+                    $publicacion->setNumero($_POST['numero']);
+
+                    $valor = $publicacion->guardarPublicacion();
+                    if($valor){
+                        $_SESSION['publicacionCreada'] = true;
+                    }else{
+                        $_SESSION['publicacionCreada'] = false;
+                    }
+                }else{
+                    $_SESSION['publicacionCreada'] = false;
+                }
+            }else{
+                $_SESSION['publicacionCreada'] = false;
+            }
+            header("Location:".base_url.'contenidista/crearPublicacion');
+        }
+
     }
 ?>
