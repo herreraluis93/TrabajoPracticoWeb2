@@ -63,7 +63,7 @@ class Database{
         return $resultado;
       }
 
-      public function querySelectPublicaciones($sql){
+    public function querySelectPublicaciones($sql){
         
         $stmt = $this->conexion->prepare($sql);
         $stmt->execute();
@@ -75,6 +75,14 @@ class Database{
         }else{
             $resultado = false;
         }
+    }
+
+    public function queryInsertarNoticia($sql,$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$seccion,$publicacion){
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("ssssssiii",$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$seccion,$publicacion);
+        $resultado = $stmt->execute();
+        $stmt->close();
+        return $resultado;
 
         $stmt->close();
         return $resultado;

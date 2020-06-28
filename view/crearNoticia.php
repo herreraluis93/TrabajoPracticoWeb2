@@ -9,18 +9,33 @@
     <?php Utils::borrarSesion('noticiaCreada'); ?>
 
 
-<form action="<?=base_url?>contenidista/guardarNoticia" method="POST">
+<form action="<?=base_url?>contenidista/guardarNoticia" method="POST" enctype="multipart/form-data">
     <label for="titulo">Titulo</label>
     <input type="text" name="titulo" required/><br/>
 
     <label for="texto">Texto</label>
-    <input type="text" name="texto" required/><br/>
+    <textarea name="texto" cols="40" rows="5"></textarea> <br/>
 
     <label for="enlace">Enlace</label>
     <input type="text" name="enlace" required/><br/>
 
     <label for="georeferencia">Georeferencia</label>
-    <input type="text" name="georeferencia" required/></br>
+    <input type="text" name="georeferencia" required/><br/>
+    <div id="map"></div>
+
+    <label for="imagen">Cargar Imagen</label>
+    <input type="file" name="imagen" ><br/>
+
+    <label for="tipoNoticia">Tipo noticia</label>
+    <select name="tipoNoticia">
+        <option value="P">
+            Pago
+        </option>
+        <option value="G">
+            Gratuito
+        </option>
+    </select>
+    <br/>
 
     <select name="seccion">
     <?php

@@ -20,44 +20,48 @@
                 $texto = isset($_POST['texto']) ? $_POST['texto'] : false;
                 $enlace = isset($_POST['enlace']) ? $_POST['enlace'] : false;
                 $georeferencia = isset($_POST['georeferencia']) ? $_POST['georeferencia'] : false;
+                $tipoNoticia = isset($_POST['tipoNoticia']) ? $_POST['tipoNoticia'] : false;
                 $seccion = isset($_POST['seccion']) ? $_POST['seccion'] : false;
                 $publicacion = isset($_POST['publicacion']) ? $_POST['publicacion'] : false;
+                $imagen = true;
 
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                var_dump($_POST);
-                die();
+                if($_FILES["imagen"]["error"] > 0){
+                    $imagen = false;
+                    echo "error > 0";
+                    die();
+                }else{
+                    if(file_exists("img/". $_FILES["imagen"]["name"])){
+                        $imagen = false;
+                        echo "error existe el archivo";
+                        die();
+                    }
+                }
 
-                if($titulo && $texto && $enlace && $georeferencia && $seccion && $publicacion){
+                if($titulo && $texto && $enlace && $georeferencia && $imagen && $tipoNoticia && $seccion && $publicacion){
                     $noticia = new NoticiaModel();
                     $noticia->setTitulo($_POST['titulo']);
                     $noticia->setTexto($_POST['texto']);
                     $noticia->setEnlace($_POST['enlace']);
                     $noticia->setGeoreferencia($_POST['georeferencia']);
+                    $noticia->setImagen($_FILES["imagen"]["name"]);
+                    $noticia->setTipoNoticia($_POST['tipoNoticia']);
                     $noticia->setSeccion($_POST['seccion']);
                     $noticia->setPublicacion($_POST['publicacion']);
-                    $valor = $noticia->guardar();
+                    $noticia->setIdUsuario($_SESSION['usuario']->id_usuario);
+                    $valor = $noticia->guardarNoticia();
                     if($valor){
-                        $_SESSION['register'] = "Completo";
+                        move_uploaded_file($_FILES["imagen"]["tmp_name"],"img/" . $_FILES["imagen"]["name"]);
+                        $_SESSION['noticiaCreada'] = true;
                     }else{
-                        $_SESSION['register'] = "Fallo";
+                        $_SESSION['noticiaCreada'] = false;
                     }
                 }else{
-                    $_SESSION['register'] = "Fallo";
+                    $_SESSION['noticiaCreada'] = false;
                 }
-
             }else{
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                echo "no guardado";
-                $_SESSION['register'] = "Fallo";
+                $_SESSION['noticiaCreada'] = false;
             }
-            header("Location:".base_url.'usuario/registrar');
+            header("Location:".base_url.'contenidista/crearNoticia');
         }
 
 
