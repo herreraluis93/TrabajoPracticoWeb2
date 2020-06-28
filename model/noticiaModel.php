@@ -8,6 +8,8 @@
         private $texto;
         private $enlace;
         private $georeferencia;
+        private $imagen;
+        private $tipoNoticia;
         private $seccion;
         private $publicacion;
         private $usuario;
@@ -37,8 +39,8 @@
         }
 
         public function guardarNoticia(){
-            $sql = "INSERT INTO  noticia (id_noticia,titulo,texto,enlace,georeferencia,id_usuario,id_publicacion,id_seccion) VALUES(NULL,?,?,?,?,?,?,?)";
-            $stmt = $this->db->queryInsertarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->usuario,$this->seccion,$this->publicacion);
+            $sql = "INSERT INTO  noticia (id_noticia,titulo,texto,enlace,georeferencia,imagenes,tipo,id_usuario,id_publicacion,id_seccion) VALUES(NULL,?,?,?,?,?,?,?,?,?)";
+            $stmt = $this->db->queryInsertarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->usuario,$this->seccion,$this->publicacion);
             $this->db->close();
             return $stmt;
         }
@@ -68,6 +70,14 @@
 
         public function setIdUsuario($usuario){
             $this->usuario = $usuario;
+        }
+
+        public function setTipoNoticia($tipoNoticia){
+            $this->tipoNoticia = $tipoNoticia;
+        }
+
+        public function setImagen($imagen){
+            $this->imagen = $imagen;
         }
 
     }

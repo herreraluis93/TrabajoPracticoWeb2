@@ -77,9 +77,9 @@ class Database{
         }
     }
 
-    public function queryInsertarNoticia($sql,$titulo,$texto,$enlace,$georeferencia,$usuario,$seccion,$publicacion){
+    public function queryInsertarNoticia($sql,$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$seccion,$publicacion){
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("ssssiii",$titulo,$texto,$enlace,$georeferencia,$usuario,$seccion,$publicacion);
+        $stmt->bind_param("ssssssiii",$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$seccion,$publicacion);
         $resultado = $stmt->execute();
         $stmt->close();
         return $resultado;

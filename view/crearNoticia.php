@@ -9,7 +9,7 @@
     <?php Utils::borrarSesion('noticiaCreada'); ?>
 
 
-<form action="<?=base_url?>contenidista/guardarNoticia" method="POST">
+<form action="<?=base_url?>contenidista/guardarNoticia" method="POST" enctype="multipart/form-data">
     <label for="titulo">Titulo</label>
     <input type="text" name="titulo" required/><br/>
 
@@ -22,6 +22,20 @@
     <label for="georeferencia">Georeferencia</label>
     <input type="text" name="georeferencia" required/><br/>
     <div id="map"></div>
+
+    <label for="imagen">Cargar Imagen</label>
+    <input type="file" name="imagen" ><br/>
+
+    <label for="tipoNoticia">Tipo noticia</label>
+    <select name="tipoNoticia">
+        <option value="P">
+            Pago
+        </option>
+        <option value="G">
+            Gratuito
+        </option>
+    </select>
+    <br/>
 
     <select name="seccion">
     <?php
