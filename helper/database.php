@@ -73,7 +73,7 @@ class Database{
         if($usuario->num_rows != 0){
             $resultado = $usuario->fetch_all(MYSQLI_NUM);
         }else{
-            $resultado = false; 
+            $resultado = false;
         }
     }
 
