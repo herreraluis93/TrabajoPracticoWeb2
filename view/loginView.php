@@ -1,4 +1,4 @@
-<h1>Iniciar Sesión</h1>
+
 
 
     <?php if(isset($_SESSION['errorLogin'])): ?>
@@ -7,12 +7,19 @@
     <?php Utils::borrarSesion('errorLogin') ?>
 
 
-<form action="<?=base_url?>usuario/validarLogin" method="POST">
-    <label for="email">Email</label>
-    <input type="text" name="email" required/><br/>
+<div class="contenedorImagenIngresar">
+    bjbkjj
+</div>
 
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" required/></br>
+<div class="contenedorFormulario">
+<h1>Iniciar Sesión</h1>
+    <form action="<?=base_url?>usuario/validarLogin" method="POST">
+        <label for="email">Email</label>
+        <input type="text" name="email" required/><br/>
 
-    <input type="submit" value="Iniciar Sesión"/>
-</form>
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" required/></br>
+
+        <input type="submit" value="Iniciar Sesión"/>
+    </form>
+</div>

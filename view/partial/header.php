@@ -39,8 +39,8 @@
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Bienvenido, <?php echo $_SESSION['usuario']->nombre ?></a>
         </div>
     </div>
+<?php elseif(isset($_GET['page']) && $_GET['page'] == 'usuario' && ($_GET['action'] == 'login' || $_GET['action'] == 'registrar')): ?> 
 <?php else: ?>
-
     <div class="w3-top">
         <div class="w3-bar w3-blue w3-card" style="z-index:5;">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -69,4 +69,4 @@
   
 <?php endif; ?>
 
-<div class="w3-main" style="margin-left:340px;margin-right:40px;margin-top:50px">
+<!-- <div class="w3-main" style="margin-left:340px;margin-right:40px;"> -->

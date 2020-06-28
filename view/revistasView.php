@@ -1,1 +1,3 @@
-Revistas
+<div class="contenedorRevistas">
+    REVISTAS
+</div>
