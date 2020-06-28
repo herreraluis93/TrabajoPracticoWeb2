@@ -1,4 +1,8 @@
-<h1>Registrarse</h1>
+<div class="contenedorRegistro">
+    <a href="<?=base_url?>usuario/index"> 
+            <img src="<?=base_url?>img/back-button.png">
+    </a>    
+    <h1>Registrarse</h1>
 
 
     <?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'Completo'): ?>
@@ -9,18 +13,19 @@
     <?php Utils::borrarSesion('register'); ?>
 
 
-<form action="<?=base_url?>usuario/guardar" method="POST">
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" required/><br/>
+    <form action="<?=base_url?>usuario/guardar" method="POST">
+        <label for="nombre">Nombre</label></br>
+        <input type="text" name="nombre" required/>
 
-    <label for="apellido">Apellido</label>
-    <input type="text" name="apellido" required/><br/>
+        <label for="apellido">Apellido</label><br/>
+        <input type="text" name="apellido" required/>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" required/><br/>
+        <label for="email">Email</label><br/>
+        <input type="email" name="email" required/>
 
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" required/></br>
+        <label for="password">Contraseña</label></br>
+        <input type="password" name="password" required/>
 
-    <input type="submit" value="Registrarse"/>
-</form>
+        <button type="submit" value="Registrarse"> </button>
+    </form>
+</div>
