@@ -20,6 +20,11 @@
     height: 400px;
 }
 
+#map {
+    height: 500px;
+    width: 500px;
+  }
+
 .diario{
     background-color: black;
     margin-left:400px;

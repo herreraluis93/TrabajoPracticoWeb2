@@ -6,6 +6,8 @@
         private $conexion;
 
         public function revistas(){
+            $lector = new LectorModel();
+            $revistas = $lector->obtenerRevistas();
             include_once("view/revistasView.php");
         }
 

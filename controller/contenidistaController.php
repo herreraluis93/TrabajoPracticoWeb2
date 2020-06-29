@@ -34,8 +34,6 @@
                 }else{
                     if(file_exists("img/". $_FILES["imagen"]["name"])){
                         $imagen = false;
-                        echo "error existe el archivo";
-                        die();
                     }
                 }
 
@@ -49,6 +47,7 @@
                     $noticia->setTipoNoticia($_POST['tipoNoticia']);
                     $noticia->setSeccion($_POST['seccion']);
                     $noticia->setPublicacion($_POST['publicacion']);
+
                     $noticia->setIdUsuario($_SESSION['usuario']->id_usuario);
                     $valor = $noticia->guardarNoticia();
                     if($valor){
