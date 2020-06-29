@@ -54,7 +54,7 @@
         foreach($publicaciones as $publicacion):
     ?>
         <option value="<?=$publicacion[0] ?>">
-            <?=$publicacion[1]?> Número:<?=$publicacion[4]?> - <?= $publicacion[3]?> 
+            <?=$publicacion[2]?> Número:<?=$publicacion[4]?> - <?= $publicacion[3]?> 
         </option>
     <?php
         endforeach;
