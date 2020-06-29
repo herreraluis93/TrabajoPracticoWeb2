@@ -1,5 +1,5 @@
 <div class="contenedorRegistro">
-    <a href="<?=base_url?>usuario/index"> 
+    <a href="<?=base_url?>usuario/login"> 
             <img src="<?=base_url?>img/back-button.png">
     </a>    
     <h1>Registrarse</h1>
@@ -14,18 +14,18 @@
 
 
     <form action="<?=base_url?>usuario/guardar" method="POST">
-        <label for="nombre">Nombre</label></br>
+        <label for="nombre">Nombre</label>
+        <label for="apellido" class="labelApellido">Apellido</label></br>
+
         <input type="text" name="nombre" required/>
+        <input type="text" name="apellido" required/> </br>
 
-        <label for="apellido">Apellido</label><br/>
-        <input type="text" name="apellido" required/>
+        <label for="email">Email</label>
+        <label for="password" class="labelPass">Contraseña</label></br>
 
-        <label for="email">Email</label><br/>
         <input type="email" name="email" required/>
+        <input type="password" name="password" required/></br>
 
-        <label for="password">Contraseña</label></br>
-        <input type="password" name="password" required/>
-
-        <button type="submit" value="Registrarse"> </button>
+        <button type="submit"> Registrarse </button>
     </form>
 </div>

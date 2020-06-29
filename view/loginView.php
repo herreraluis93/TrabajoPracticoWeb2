@@ -17,16 +17,15 @@
     </a>
     <h1>Iniciar Sesión</h1>
     <form action="<?=base_url?>usuario/validarLogin" method="POST">
-        <label for="email">Email</label>
+        <label for="email">Email</label><br>
         <input type="text" name="email" required/><br/>
 
-        <label for="password">Contraseña</label>
+        <label for="password">Contraseña</label><br>
         <input type="password" name="password" required/></br>
-        <a href="">Olvide mi contraseña</a></br>
 
-        <input type="submit" value="Iniciar Sesión"/>
+        <button type="submit">Iniciar Sesión </button>
     </form>
-    <a href="<?=base_url?>usuario/registrar">Registrarme</a></br>
+    <a href="<?=base_url?>usuario/registrar" class="linkRegistro">REGISTRARME</a></br>
     
 
 </div>
