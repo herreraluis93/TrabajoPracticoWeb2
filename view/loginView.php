@@ -8,18 +8,24 @@
 
 
 <div class="contenedorImagenIngresar">
-    bjbkjj
+    <img src="<?=base_url?>img/login.jpg">
 </div>
 
 <div class="contenedorFormulario">
-<h1>Iniciar Sesión</h1>
+    <a href="<?=base_url?>usuario/index"> 
+        <img src="<?=base_url?>img/back-button.png">
+    </a>
+    <h1>Iniciar Sesión</h1>
     <form action="<?=base_url?>usuario/validarLogin" method="POST">
-        <label for="email">Email</label>
+        <label for="email">Email</label><br>
         <input type="text" name="email" required/><br/>
 
-        <label for="password">Contraseña</label>
+        <label for="password">Contraseña</label><br>
         <input type="password" name="password" required/></br>
 
-        <input type="submit" value="Iniciar Sesión"/>
+        <button type="submit">Iniciar Sesión </button>
     </form>
+    <a href="<?=base_url?>usuario/registrar" class="linkRegistro">REGISTRARME</a></br>
+    
+
 </div>

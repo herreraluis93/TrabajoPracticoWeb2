@@ -1,1 +1,3 @@
-DIARIOS
+<div class="contenedorRevistas">
+    DIARIOS
+</div>
