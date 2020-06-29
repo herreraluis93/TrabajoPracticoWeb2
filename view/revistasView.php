@@ -1,12 +1,5 @@
 <div class="contenedorRevistas">
-    REVISTAS
         <?php
-            echo "<br/>";
-            echo "<br/>";
-            echo "<br/>";
-            echo "<br/>";
-            echo "<br/>";
-            echo "<br/>";
             foreach($revistas as $revista):
         ?>
         <div class="revista">

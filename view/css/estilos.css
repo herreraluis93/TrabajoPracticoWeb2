@@ -20,6 +20,11 @@
     height: 400px;
 }
 
+#map {
+    height: 500px;
+    width: 500px;
+  }
+
 .diario{
     background-color: black;
     margin-left:400px;
@@ -32,7 +37,7 @@
 .contenedorRevistas{
     margin-left:340px;
     margin-right:40px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .w3-bar .w3-bar-item{
     float: right;
@@ -41,7 +46,7 @@
 .contenedorDiario{
     margin-left:340px;
     margin-right:40px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .contenedor{
     height: 500px;
