@@ -48,14 +48,14 @@
   
 <?php elseif(isset($_SESSION['usuario']) && $_SESSION['usuario']->rol == 'contenidista'): ?>
     <div class="w3-top">
-        <div class="w3-bar w3-black w3-card">
+        <div class="w3-bar w3-blue w3-card">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large">Inicio</a>
+            <a href="<?=base_url?>usuario/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cerrar Sesión</a>          
             <a href="<?=base_url?>seccion/crearSeccion" class="w3-bar-item w3-button w3-padding-large">Crear Seccion</a>
             <a href="<?=base_url?>contenidista/crearNoticia" class="w3-bar-item w3-button w3-padding-large">Crear Noticia</a>
             <a href="<?=base_url?>contenidista/crearPublicacion" class="w3-bar-item w3-button w3-padding-large">Crear Publicación</a>
-            <a href="<?=base_url?>usuario/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cerrar Sesión</a>
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Bienvenido, <?php echo $_SESSION['usuario']->nombre ?></a>
+            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left">InfoNete</a>
         </div>
     </div>
 <?php elseif(isset($_SESSION['usuario']) && $_SESSION['usuario']->rol == 'administrador'): ?>
