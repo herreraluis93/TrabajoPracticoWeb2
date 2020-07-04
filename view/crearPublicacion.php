@@ -1,6 +1,5 @@
 <h1>Crear Publicación</h1>
 
-
     <?php if(isset($_SESSION['publicacionCreada']) && $_SESSION['publicacionCreada'] == true): ?>
         <strong class="alertGreen">Publicación guardada correctamente</strong>
     <?php elseif(isset($_SESSION['publicacionCreada']) && $_SESSION['publicacionCreada'] == false): ?>

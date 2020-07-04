@@ -108,6 +108,14 @@ class Database{
         return $resultado;
       }
 
+    public function queryInsertarSeccion($sql,$descripcion){
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("s",$descripcion);
+        $resultado = $stmt->execute();
+        $stmt->close();
+        return $resultado;
+    }
+
     public function close(){
         $this->conexion->close();
     }
