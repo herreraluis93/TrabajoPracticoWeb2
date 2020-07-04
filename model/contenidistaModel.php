@@ -38,30 +38,6 @@
             return $stmt;
         }
 
-        public function setTitulo($titulo){
-            $this->titulo = $titulo;
-        }
-
-        public function setTexto($texto){
-            $this->texto = $texto;
-        }
-
-        public function setEnlace($enlace){
-            $this->enlace = $enlace;
-        }
-
-        public function setGeoreferencia($georeferencia){
-            $this->georeferencia = $georeferencia;
-        }
-
-        public function setSeccion($seccion){
-            $this->seccion = $seccion;
-        }
-
-        public function setPublicacion($publicacion){
-            $this->publicacion = $publicacion;
-        }
-
     }
 
 ?>

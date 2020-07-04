@@ -4,15 +4,6 @@
     class LectorModel{
         //atributos de acuerdo a los campos de la tabla en base de datos
         private $db;
-        private $titulo;
-        private $texto;
-        private $enlace;
-        private $georeferencia;
-        private $imagen;
-        private $tipoNoticia;
-        private $seccion;
-        private $publicacion;
-        private $usuario;
 
         public function __construct(){
             $this->db = new Database();
