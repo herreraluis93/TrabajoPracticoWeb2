@@ -142,9 +142,9 @@ class Database{
     }
 
     //****************************INSERTA UNA NUEVA SECCIÓN*******************************************/
-    public function queryInsertarSeccion($sql,$descripcion){
+    public function queryInsertarSeccion($sql,$descripcion,$habilitado){
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("s",$descripcion);
+        $stmt->bind_param("si",$descripcion,$habilitado);
         $resultado = $stmt->execute();
         $stmt->close();
         return $resultado;
