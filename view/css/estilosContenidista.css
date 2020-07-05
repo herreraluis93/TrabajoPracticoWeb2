@@ -1,0 +1,49 @@
+.fondoPublicacion{
+    height: 665px;
+    position: fixed;
+    width: 100%;
+}
+
+.fondoInicio{
+    height: 665px;
+    position: fixed;
+    width: 100%;
+}
+
+.fondoInicio .contenedorInicio{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 820px;
+    height: 80%;
+    margin-top: 100px;
+    margin-left: 300px;
+    position: relative;
+}
+
+.fondoInicio p{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+}
+
+.fondoInicio img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.fondoPublicacion img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.contenedorPublicacion{
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    margin-top: 100px;
+    margin-left: 500px;
+    width: 420px;
+    height: 50%;
+    padding: 50px;
+}
+

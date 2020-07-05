@@ -1,0 +1,22 @@
+.fondoNoticia{
+    background-color: black;
+    height: 665px;
+    position: fixed;
+    width: 100%;
+}
+
+.fondoNoticia img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.contenedorNoticia{
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    margin-top: 80px;
+    margin-left: 500px;
+    width: 420px;
+    height: 100%;
+    padding: 10px;
+}
+
