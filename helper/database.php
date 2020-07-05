@@ -101,7 +101,7 @@ class Database{
     //*********************************INSERTA UNA NUEVA NOTICIA*************************************
     public function queryInsertarNoticia($sql,$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$publicacion,$seccion,$habilitado){
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("ssssssiiis",$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$publicacion,$seccion,$habilitado);
+        $stmt->bind_param("ssssssiiii",$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$publicacion,$seccion,$habilitado);
         $resultado = $stmt->execute();
         $stmt->close();
         return $resultado;
