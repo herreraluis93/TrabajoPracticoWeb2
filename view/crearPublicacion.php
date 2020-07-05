@@ -1,10 +1,9 @@
-
-    <?php if(isset($_SESSION['publicacionCreada']) && $_SESSION['publicacionCreada'] == true): ?>
+<?php if(isset($_SESSION['publicacionCreada']) && $_SESSION['publicacionCreada'] == true): ?>
         <strong class="alertGreen">Publicación guardada correctamente</strong>
-    <?php elseif(isset($_SESSION['publicacionCreada']) && $_SESSION['publicacionCreada'] == false): ?>
+<?php elseif(isset($_SESSION['publicacionCreada']) && $_SESSION['publicacionCreada'] == false): ?>
         <strong class="alertRed">Publicación no guardada</strong>
-    <?php endif; ?>
-    <?php Utils::borrarSesion('publicacionCreada'); ?>
+<?php endif; ?>
+<?php Utils::borrarSesion('publicacionCreada'); ?>
 
 
 <div class="fondoPublicacion">

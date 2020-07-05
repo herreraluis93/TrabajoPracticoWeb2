@@ -1,10 +1,7 @@
-
-
-
-    <?php if(isset($_SESSION['errorLogin'])): ?>
+<?php if(isset($_SESSION['errorLogin'])): ?>
         <strong class="alertRed">Usuario y/o contraseña inválido</strong>
-    <?php endif; ?>
-    <?php Utils::borrarSesion('errorLogin') ?>
+<?php endif; ?>
+<?php Utils::borrarSesion('errorLogin') ?>
 
 
 <div class="contenedorImagenIngresar">
