@@ -34,35 +34,5 @@
             header("Location:".base_url.'seccion/crearSeccion');
         }
 
-        //*********OBTIENE TODAS LAS SECCIONES Y LAS MUESTRA PARA QUE EL ADMIN PUEDA HABILITAR O DESAHABILITAR */
-        public function habilitar(){
-            $seccion = new SeccionModel();
-            $todasSecciones = $seccion->obtenerSecciones();
-            include_once("view/habilitarSeccion.php");
-        }
-
-
-        /*************************HABILITA/DESABILITA LA SECCION QUE SE INDICA POR POST************* */
-        public function habilitarSeccion(){
-            $seccion = new SeccionModel();
-            $resultado = $seccion->habilitarSeccion($_POST['id_seccion'],$_POST['habilitado']);
-
-            if($resultado){
-                if($_POST['habilitado'] == 1){
-                    $_SESSION['seccionHabilitada'] = true;
-                }else{
-                    $_SESSION['seccionDeshabilitada'] = true;
-                }
-            }else{
-                if($_POST['habilitado'] == 0){
-                    $_SESSION['seccionHabilitada'] = false;
-                }else{
-                    $_SESSION['seccionDeshabilitada'] = false;
-                }
-            }
-            header("Location:".base_url.'seccion/habilitar');
-        }
-
-
     }
 ?>

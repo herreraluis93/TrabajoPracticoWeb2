@@ -1,6 +1,1 @@
-<br/>
-<br/>
-<br/>
-<br/>
-
-<h1>INICIO ADMINISTRADOR</h1>
+<h1>PAGINA DE ADMINISTRADOR</h1>

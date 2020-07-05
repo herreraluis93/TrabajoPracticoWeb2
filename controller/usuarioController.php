@@ -59,8 +59,8 @@
                 if($usuario){
                     $_SESSION['usuario'] = $usuario;
                     $vistaInicio = "Location:".base_url."usuario/index";
-                    header($vistaInicio);
-                    exit();
+                        header($vistaInicio);
+                        exit();
                 }else{
                     $_SESSION['errorLogin'] = "error";
                 }

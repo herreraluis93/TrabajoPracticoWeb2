@@ -170,6 +170,5 @@
         public function misNoticias(){
             include_once("view/misNoticias.php");
         }
-
     }
 ?>
