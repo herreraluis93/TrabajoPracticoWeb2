@@ -65,7 +65,7 @@
                     $_SESSION['errorLogin'] = "error";
                 }
             }
-            header("Location:".base_url);
+            header("Location:".base_url."usuario/login");
         }
 
         public function lector(){

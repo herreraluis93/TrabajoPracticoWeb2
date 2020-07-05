@@ -39,11 +39,8 @@
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Opinion</a> 
     <u>Revistas</u> 
-    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a> 
-    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Decoracion</a> 
-    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Espectaculos</a>
+    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
   </div>
 </nav>
     </div>
@@ -67,7 +64,7 @@
             <a href="<?=base_url?>publicacion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Publicación</a>
             <a href="<?=base_url?>noticia/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Noticia</a>
             <a href="<?=base_url?>seccion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Sección</a>
-            <a href="<?=base_url?>publicacion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cerrar Sesión</a>
+            <a href="<?=base_url?>usuario/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cerrar Sesión</a>
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Bienvenido, <?php echo $_SESSION['usuario']->nombre ?></a>
         </div>
     </div>
@@ -90,7 +87,6 @@
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a>
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a>
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Opinion</a>
     <u>Revistas</u> 
     <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
   </div>
