@@ -37,8 +37,8 @@
 
 
         public function guardarSeccion(){
-            $sql = "INSERT INTO  seccion (id_seccion,descripcion) VALUES(NULL,?)";
-            $stmt = $this->db->queryInsertarSeccion($sql,$this->descripcion);
+            $sql = "INSERT INTO  seccion (id_seccion,descripcion,habilitado) VALUES(NULL,?,?)";
+            $stmt = $this->db->queryInsertarSeccion($sql,$this->descripcion,0);
             $this->db->close();
             return $stmt;
         }
