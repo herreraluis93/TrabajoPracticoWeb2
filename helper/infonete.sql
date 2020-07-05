@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2020 a las 23:42:11
+-- Tiempo de generación: 06-07-2020 a las 01:06:26
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.31
 
@@ -46,11 +46,13 @@ CREATE TABLE `noticia` (
 --
 
 INSERT INTO `noticia` (`id_noticia`, `titulo`, `texto`, `enlace`, `georeferencia`, `imagenes`, `tipo`, `id_usuario`, `id_publicacion`, `id_seccion`, `habilitado`) VALUES
-(1, 'Titulo', 'texto noticia', 'enlace', 'georeferencia', NULL, NULL, 4, 1, 1, 1),
+(1, 'Titulo', 'texto noticia', 'enlace', 'georeferencia', NULL, 'G', 4, 1, 1, 1),
 (3, 'Titulo 2', 'texto de noticia 2', 'enlace2', 'georeferencia2', NULL, 'P', 4, 1, 1, 0),
 (4, 'Título 3', 'noticia 3', 'enlace3', 'georeferencia3', 'noticia3.jpg', 'P', 4, 1, 1, 0),
-(21, 'Titulo 4', 'texto titulo 4', 'enlace4', 'georeferencia4', 'noticia4.jpg', 'P', 4, 4, 2, 1),
-(22, 'La Messi App: así quedaría con la camiseta de cada posible destino', 'La bomba estalló en España y el temblor sacudió a cada uno de los rincones del planeta fútbol. La po', 'enlace5', 'georeferencia5', 'imagen_messi.jpg', 'P', 4, 1, 2, 1);
+(21, 'Titulo 4', 'texto titulo 4', 'enlace4', 'georeferencia4', 'noticia4.jpg', 'G', 4, 4, 2, 1),
+(22, 'La Messi App: así quedaría con la camiseta de cada posible destino', 'La bomba estalló en España y el temblor sacudió a cada uno de los rincones del planeta fútbol. La po', 'enlace5', 'georeferencia5', 'imagen_messi.jpg', 'P', 4, 1, 2, 1),
+(23, 'Título 5', 'Texto noticia 5', 'enlace5', 'georeferencia5', 'imagen5.jpg', 'G', 4, 4, 1, 1),
+(24, 'Título 6', 'Texto de noticia 6', 'enlace6', 'georeferencia6', 'noticia6.jpg', 'P', 4, 4, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -75,7 +77,10 @@ INSERT INTO `publicacion` (`id_publicacion`, `nombre`, `tipo`, `fecha_public`, `
 (1, 'Diario', 'Diario', '2020-06-20', 1, 1),
 (2, 'Diario', 'Diario', '2020-06-21', 2, 1),
 (3, 'Ole', 'Diario', '2020-06-28', 1, 0),
-(4, 'Ole', 'Revista', '2020-03-07', 1, 0);
+(4, 'Ole', 'Revista', '2020-03-07', 1, 0),
+(5, 'Olé', 'Diario', '2020-07-05', 21, 0),
+(6, 'Diario', 'Diario', '2020-07-06', 22, 0),
+(7, 'Diario', 'Diario', '2020-07-07', 23, 0);
 
 -- --------------------------------------------------------
 
@@ -97,7 +102,8 @@ INSERT INTO `seccion` (`id_seccion`, `descripcion`, `habilitado`) VALUES
 (1, 'Espectáculo', 1),
 (2, 'Deporte', 1),
 (3, 'Policial', 1),
-(4, 'Economía', 1);
+(4, 'Economía', 1),
+(6, 'Fútbol', 0);
 
 -- --------------------------------------------------------
 
@@ -201,19 +207,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  MODIFY `id_publicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_publicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `seccion`
 --
 ALTER TABLE `seccion`
-  MODIFY `id_seccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_seccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `suscripcion`
