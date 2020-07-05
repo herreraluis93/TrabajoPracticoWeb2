@@ -20,7 +20,7 @@
         }
 
         public function obtenerSecciones(){
-            $sql = "SELECT * FROM  seccion";
+            $sql = "SELECT * FROM  seccion WHERE habilitado = 1";
             $secciones = $this->db->querySelectSecciones($sql);
             $resultado = false;
             if($secciones){
@@ -31,7 +31,7 @@
 
         /************************************OBTIENE TODAS LAS PUBLICACIONES ***********************/
         public function obtenerPublicaciones(){
-            $sql = "SELECT * FROM  publicacion";
+            $sql = "SELECT * FROM  publicacion WHERE habilitado = 1";
             $secciones = $this->db->querySelectSecciones($sql);
             $resultado = false;
             if($secciones){
@@ -59,6 +59,17 @@
             $resultado = false;
             if($noticia){
                 $resultado = $noticia;
+            }
+            return $resultado;
+        }
+
+        /********************************OBTENER NOTICIAS GRATUITAS DE LAS REVISTAS****************/
+        public function obtenerRevistasGratuitas(){
+            $sql = "SELECT * FROM  noticia WHERE tipo='G' AND habilitado = 1";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = false;
+            if($noticias){
+                $resultado = $noticias;
             }
             return $resultado;
         }

@@ -1,5 +1,6 @@
 <?php
     require_once 'model/lectorModel.php';
+    require_once 'model/noticiaModel.php';
 
     class LectorController{
 
@@ -7,7 +8,13 @@
 
         public function revistas(){
             $lector = new LectorModel();
-            $revistas = $lector->obtenerRevistas();
+            $noticia = new NoticiaModel();
+            if(isset($_SESSION['usuario'])){
+                $revistas = $lector->obtenerRevistas();
+            }else{
+                $revistas = $noticia->obtenerRevistasGratuitas();
+            }
+
             include_once("view/revistasView.php");
         }
 

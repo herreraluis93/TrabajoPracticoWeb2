@@ -82,7 +82,7 @@ class Database{
         return $resultado;
     }
 
-    //******************************EJECUTA EL SQL PARA OBTENER TODAS LAS NOTICIAS**************************************
+    //**********EJECUTA EL SQL PARA OBTENER LAS NOTICIAS INDICADAS POR EL PARÁMETRO SQL***************
     public function querySelectNoticias($sql){
         
         $stmt = $this->conexion->prepare($sql);
