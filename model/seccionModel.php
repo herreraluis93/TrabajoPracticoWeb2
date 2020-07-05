@@ -11,6 +11,7 @@
             $this->db = new Database();
         }
 
+        /*************************OBTIENE TODAS LA SECCIONES************************* */
         public function obtenerSecciones(){
             $sql = "SELECT * FROM  seccion";
             $secciones = $this->db->querySelectSecciones($sql);
@@ -20,6 +21,19 @@
             }
             return $resultado;
         }
+
+
+        /********************************HABILITAR SECCIÓN *********************************/
+        public function habilitarSeccion($id_noticia,$habilitado){
+            $sql = "UPDATE noticia SET habilitado=? WHERE id_noticia=?";
+            $noticia = $this->db->queryHabilitarNoticia($sql,$habilitado,$id_noticia);
+            $resultado = false;
+            if($noticia){
+                $resultado = $noticia;
+            }
+            return $resultado;
+        }
+
 
         public function guardarSeccion(){
             $sql = "INSERT INTO  seccion (id_seccion,descripcion) VALUES(NULL,?)";
