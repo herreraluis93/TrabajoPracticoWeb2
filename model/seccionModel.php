@@ -27,10 +27,10 @@
         /****GENERA LA QUERY PARA HABILITAR LA SECCION INDICADA POR PARÁMETRO, EL DATABASE EJECUTA LA CONSULTA */
         public function habilitarSeccion($id_seccion,$habilitado){
             $sql = "UPDATE seccion SET habilitado=? WHERE id_seccion=?";
-            $noticia = $this->db->queryHabilitar($sql,$habilitado,$id_seccion);
+            $seccion = $this->db->queryHabilitar($sql,$habilitado,$id_seccion);
             $resultado = false;
-            if($noticia){
-                $resultado = $noticia;
+            if($seccion){
+                $resultado = $seccion;
             }
             return $resultado;
         }
