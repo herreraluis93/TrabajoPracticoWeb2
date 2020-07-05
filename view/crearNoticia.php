@@ -1,15 +1,13 @@
-
-    <?php if(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == true): ?>
-        <strong class="alertGreen">Noticia guardada correctamente</strong>
-    <?php elseif(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == false): ?>
-        <strong class="alertRed">Noticia no guardada</strong>
-    <?php endif; ?>
-    <?php Utils::borrarSesion('noticiaCreada'); ?>
-
-    <div class="fondoNoticia">
+<div class="fondoNoticia">
         <img src="<?=base_url?>img/fondoCrear.jpg">
         <div class="contenedorNoticia">
             <h1>Crear Noticia</h1>
+            <?php if(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == true): ?>
+        <strong class="alertGreen">Noticia guardada correctamente</strong>
+<?php elseif(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == false): ?>
+        <strong class="alertRed">Noticia no guardada</strong>
+<?php endif; ?>
+<?php Utils::borrarSesion('noticiaCreada'); ?>
             <form action="<?=base_url?>contenidista/guardarNoticia" method="POST" enctype="multipart/form-data">
             <label for="titulo">Titulo</label>
             <input type="text" name="titulo" required/><br/>
