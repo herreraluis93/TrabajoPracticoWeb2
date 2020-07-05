@@ -15,8 +15,8 @@
 
 
         public function guardarPublicacion(){
-            $sql = "INSERT INTO  publicacion (id_publicacion,nombre,tipo,fecha_public,numero) VALUES(NULL,?,?,?,?)";
-            $stmt = $this->db->queryInsertarPublicacion($sql,$this->nombre,$this->tipo,$this->fechaPublicacion,$this->numero);
+            $sql = "INSERT INTO  publicacion (id_publicacion,nombre,tipo,fecha_public,numero,habilitado) VALUES(NULL,?,?,?,?,?)";
+            $stmt = $this->db->queryInsertarPublicacion($sql,$this->nombre,$this->tipo,$this->fechaPublicacion,$this->numero,0);
             $this->db->close();
             return $stmt;
         }

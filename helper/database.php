@@ -118,9 +118,9 @@ class Database{
     }
     
     //**********************INSERTA UNA NUEVA PUBLICACIÓN*******************************************
-    public function queryInsertarPublicacion($sql,$nombre,$tipo,$fechaPublicacion,$numero){
+    public function queryInsertarPublicacion($sql,$nombre,$tipo,$fechaPublicacion,$numero,$habilitado){
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("sssi",$nombre,$tipo,$fechaPublicacion,$numero);
+        $stmt->bind_param("sssii",$nombre,$tipo,$fechaPublicacion,$numero,$habilitado);
         $resultado = $stmt->execute();
         $stmt->close();
         return $resultado;
