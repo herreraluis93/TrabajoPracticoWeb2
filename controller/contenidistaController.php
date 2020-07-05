@@ -167,5 +167,9 @@
             header("Location:".base_url.'contenidista/crearPublicacion');
         }
 
+        public function misNoticias(){
+            include_once("view/misNoticias.php");
+        }
+
     }
 ?>
