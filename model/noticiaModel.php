@@ -55,7 +55,7 @@
         /********************************HABILITAR NOTICIA *********************************/
         public function habilitarNoticia($id_noticia,$habilitado){
             $sql = "UPDATE noticia SET habilitado=? WHERE id_noticia=?";
-            $noticia = $this->db->queryHabilitarNoticia($sql,$habilitado,$id_noticia);
+            $noticia = $this->db->queryHabilitar($sql,$habilitado,$id_noticia);
             $resultado = false;
             if($noticia){
                 $resultado = $noticia;

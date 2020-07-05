@@ -46,6 +46,7 @@
         public function habilitarSeccion(){
             $seccion = new SeccionModel();
             $resultado = $seccion->habilitarSeccion($_POST['id_seccion'],$_POST['habilitado']);
+
             if($resultado){
                 if($_POST['habilitado'] == 1){
                     $_SESSION['seccionHabilitada'] = true;

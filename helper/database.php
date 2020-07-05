@@ -82,7 +82,7 @@ class Database{
         return $resultado;
     }
 
-    //******************************SELECCIONA TODAS LAS NOTICIAS**************************************
+    //******************************EJECUTA EL SQL PARA OBTENER TODAS LAS NOTICIAS**************************************
     public function querySelectNoticias($sql){
         
         $stmt = $this->conexion->prepare($sql);
@@ -108,13 +108,14 @@ class Database{
       }
 
     //*********************************UPDATE DE HABILITAR, DEHABILITAR NOTICIA*************************************
-    public function queryHabilitarNoticia($sql,$habilitado,$id_noticia){
+    //************SE UTILIZA PARA EJECUTAR LA QUERY DE HABILITAR O DESHABILITAR SECCIÓN,NOTICIA O PUBLICACIÓN */
+    public function queryHabilitar($sql,$habilitado,$id){
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("si",$habilitado,$id_noticia);
+        $stmt->bind_param("si",$habilitado,$id);
         $resultado = $stmt->execute();
         $stmt->close();
         return $resultado;
-      }
+    }
     
     //**********************INSERTA UNA NUEVA PUBLICACIÓN*******************************************
     public function queryInsertarPublicacion($sql,$nombre,$tipo,$fechaPublicacion,$numero){

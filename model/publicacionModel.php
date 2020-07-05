@@ -21,6 +21,30 @@
             return $stmt;
         }
 
+        /*************************OBTIENE TODAS LAS PUBLICACIONES************************* */
+        public function obtenerPublicaciones(){
+            $sql = "SELECT * FROM  publicacion";
+            $publicaciones = $this->db->querySelectPublicaciones($sql);
+            $resultado = false;
+            if($publicaciones){
+                $resultado = $publicaciones;
+            }
+            return $resultado;
+        }
+
+
+        /********************************HABILITAR PUBLICACIÓN *********************************/
+        /****GENERA LA QUERY PARA HABILITAR LA PUBLICACIÓN INDICADA POR PARÁMETRO, EL DATABASE EJECUTA LA CONSULTA */
+        public function habilitarPublicacion($id_publicacion,$habilitado){
+            $sql = "UPDATE publicacion SET habilitado=? WHERE id_publicacion=?";
+            $publicacion = $this->db->queryHabilitar($sql,$habilitado,$id_publicacion);
+            $resultado = false;
+            if($publicacion){
+                $resultado = $publicacion;
+            }
+            return $resultado;
+        }
+
         public function setNombre($nombre){
             $this->nombre = $nombre;
         }
