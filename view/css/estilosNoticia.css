@@ -15,8 +15,25 @@
     position: relative;
     margin-top: 80px;
     margin-left: 300px;
-    width: 920px;
-    height: 100%;
+    width: 820px;
+    height: 80%;
     padding: 10px;
 }
 
+.contenedorNoticia h1{
+    text-align: center;
+}
+
+.columnaIzquierda{
+    position: absolute;
+}
+
+.columnaDerecha #map{
+        height: 300px;
+        width: 300px;
+ }
+
+.columnaDerecha{
+    float: right;
+    
+}
