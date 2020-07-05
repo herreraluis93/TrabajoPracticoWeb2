@@ -13,6 +13,7 @@
         private $seccion;
         private $publicacion;
         private $usuario;
+        private $habilitado;
 
         public function __construct(){
             $this->db = new Database();
@@ -28,6 +29,7 @@
             return $resultado;
         }
 
+        /************************************OBTIENE TODAS LAS PUBLICACIONES ***********************/
         public function obtenerPublicaciones(){
             $sql = "SELECT * FROM  publicacion";
             $secciones = $this->db->querySelectSecciones($sql);
@@ -38,9 +40,32 @@
             return $resultado;
         }
 
+        /***********************************OBTIENE TODAS LAS NOTICIAS ******************************/
+        public function obtenerNoticias(){
+            $sql = "SELECT N.id_noticia, N.titulo, U.nombre, U.apellido, N.habilitado FROM  noticia N JOIN usuario U ON N.id_usuario=U.id_usuario";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = false;
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }
+
+
+        /********************************HABILITAR NOTICIA *********************************/
+        public function habilitarNoticia($id_noticia,$habilitado){
+            $sql = "UPDATE noticia SET habilitado=? WHERE id_noticia=?";
+            $noticia = $this->db->queryHabilitar($sql,$habilitado,$id_noticia);
+            $resultado = false;
+            if($noticia){
+                $resultado = $noticia;
+            }
+            return $resultado;
+        }
+
         public function guardarNoticia(){
-            $sql = "INSERT INTO  noticia (id_noticia,titulo,texto,enlace,georeferencia,imagenes,tipo,id_usuario,id_publicacion,id_seccion) VALUES(NULL,?,?,?,?,?,?,?,?,?)";
-            $stmt = $this->db->queryInsertarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->usuario,$this->publicacion,$this->seccion);
+            $sql = "INSERT INTO  noticia (id_noticia,titulo,texto,enlace,georeferencia,imagenes,tipo,id_usuario,id_publicacion,id_seccion,habilitado) VALUES(NULL,?,?,?,?,?,?,?,?,?,?)";
+            $stmt = $this->db->queryInsertarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->usuario,$this->publicacion,$this->seccion,true);
             $this->db->close();
             return $stmt;
         }
@@ -79,7 +104,6 @@
         public function setImagen($imagen){
             $this->imagen = $imagen;
         }
-
     }
 
 ?>

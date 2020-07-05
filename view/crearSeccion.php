@@ -1,9 +1,13 @@
+
 <?php if(isset($_SESSION['seccionCreada']) && $_SESSION['seccionCreada'] == true): ?>
         <strong class="alertGreen">Sección guardada correctamente</strong>
-<?php elseif(isset($_SESSION['seccionCreada']) && $_SESSION['seccionCreada'] == false): ?>
+    <?php elseif(isset($_SESSION['seccionCreada']) && $_SESSION['seccionCreada'] == false): ?>
         <strong class="alertRed">Sección no guardada</strong>
-<?php endif; ?>
+    <?php endif; ?>
 <?php Utils::borrarSesion('seccionCreada'); ?>
+
+
+
 
 <div class="fondoSeccion">
     <img src="<?=base_url?>img/fondoCrear.jpg">

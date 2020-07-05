@@ -11,6 +11,7 @@
             $this->db = new Database();
         }
 
+        /*************************OBTIENE TODAS LA SECCIONES************************* */
         public function obtenerSecciones(){
             $sql = "SELECT * FROM  seccion";
             $secciones = $this->db->querySelectSecciones($sql);
@@ -21,7 +22,6 @@
             return $resultado;
         }
 
-<<<<<<< HEAD
 
         /********************************HABILITAR SECCIÓN *********************************/
         /****GENERA LA QUERY PARA HABILITAR LA SECCION INDICADA POR PARÁMETRO, EL DATABASE EJECUTA LA CONSULTA */
@@ -36,8 +36,6 @@
         }
 
 
-=======
->>>>>>> 43db4bb6c22977deee7bec849120a53522b2d39e
         public function guardarSeccion(){
             $sql = "INSERT INTO  seccion (id_seccion,descripcion) VALUES(NULL,?)";
             $stmt = $this->db->queryInsertarSeccion($sql,$this->descripcion);

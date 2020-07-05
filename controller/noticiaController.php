@@ -1,21 +1,38 @@
 <?php
-    require_once 'model/usuarioModel.php';
+    require_once 'model/noticiaModel.php';
 
-    class UsuarioController{
+    class NoticiaController{
 
         private $conexion;
 
-        public function index(){
-            $vista = "view/indexView.php";
-            	if(isset($_SESSION['usuario'])){
-                	$vista = "view/inicio" . $_SESSION['usuario']->rol . ".php";
-            }
-            include_once($vista);
+        //************************OBTIENE TODAS LAS NOTICIAS Y LAS MUESTRA PARA QUE EL ADMIN PUEDA HABILITARO DESAHABILITAR */
+        public function habilitar(){
+            $noticia = new NoticiaModel();
+            $todasNoticias = $noticia->obtenerNoticias();
+            include_once("view/habilitarNoticia.php");
         }
 
-        public function registrar(){
-            include_once("view/registroView.php");
+
+        /*************************HABILITA/DESABILITA LA NOTICIA QUE SE INDICA POR POST************* */
+        public function habilitarNoticia(){
+            $noticia = new NoticiaModel();
+            $resultado = $noticia->habilitarNoticia($_POST['id_noticia'],$_POST['habilitado']);
+            if($resultado){
+                if($_POST['habilitado'] == 1){
+                    $_SESSION['noticiaHabilitada'] = true;
+                }else{
+                    $_SESSION['noticiaDeshabilitada'] = true;
+                }
+            }else{
+                if($_POST['habilitado'] == 0){
+                    $_SESSION['noticiaHabilitada'] = false;
+                }else{
+                    $_SESSION['noticiaDeshabilitada'] = false;
+                }
+            }
+            header("Location:".base_url.'noticia/habilitar');
         }
+
 
         public function guardar(){
             if(isset($_POST)){
@@ -59,14 +76,17 @@
                 if($usuario){
                     $_SESSION['usuario'] = $usuario;
                     $vistaInicio = "Location:".base_url."usuario/index";
-                    header($vistaInicio);
-                    exit();
+                        header($vistaInicio);
+                        exit();
                 }else{
                     $_SESSION['errorLogin'] = "error";
                 }
             }
             header("Location:".base_url);
         }
+
+        //*****************************OBTENER TODAS LAS NOTICIAS *******************************/
+
 
         public function lector(){
             include_once("view/lectorView.php");

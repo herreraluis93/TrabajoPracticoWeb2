@@ -1,9 +1,10 @@
-<?php if(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == true): ?>
+
+    <?php if(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == true): ?>
         <strong class="alertGreen">Noticia guardada correctamente</strong>
-<?php elseif(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == false): ?>
+    <?php elseif(isset($_SESSION['noticiaCreada']) && $_SESSION['noticiaCreada'] == false): ?>
         <strong class="alertRed">Noticia no guardada</strong>
-<?php endif; ?>
-<?php Utils::borrarSesion('noticiaCreada'); ?>
+    <?php endif; ?>
+    <?php Utils::borrarSesion('noticiaCreada'); ?>
 
     <div class="fondoNoticia">
         <img src="<?=base_url?>img/fondoCrear.jpg">
