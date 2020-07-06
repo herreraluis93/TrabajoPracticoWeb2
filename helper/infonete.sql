@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2020 a las 01:06:26
+-- Tiempo de generación: 06-07-2020 a las 23:14:45
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.31
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `noticia` (
   `id_noticia` int(11) NOT NULL,
-  `titulo` varchar(70) NOT NULL,
-  `texto` varchar(100) DEFAULT NULL,
+  `titulo` varchar(200) NOT NULL,
+  `texto` varchar(5000) DEFAULT NULL,
   `enlace` varchar(100) DEFAULT NULL,
   `georeferencia` varchar(100) DEFAULT NULL,
   `imagenes` varchar(100) DEFAULT NULL,
@@ -46,13 +46,14 @@ CREATE TABLE `noticia` (
 --
 
 INSERT INTO `noticia` (`id_noticia`, `titulo`, `texto`, `enlace`, `georeferencia`, `imagenes`, `tipo`, `id_usuario`, `id_publicacion`, `id_seccion`, `habilitado`) VALUES
-(1, 'Titulo', 'texto noticia', 'enlace', 'georeferencia', NULL, 'G', 4, 1, 1, 1),
+(1, 'Verónica Ojeda sobre el encuentro de Dieguito con Maradona: “Fue emotivo ver cómo él consolaba a su papá”', 'En medio del conflicto que Diego Maradona mantiene con todo su entorno, apareció la voz que faltaba en esta encrucijada. En una charla con Intrusos, Verónica Ojeda contó cómo se dio el encuentro entre Dieguito Fernando y su padre. De antemano, brindó detalles: ¿surgió volver a hablar con el técnico de Gimnasia? “El día que la hermana de mi hijo (Dalma) dijo que su papá no lo atendía, que la habían bloqueado, lo llamé al número que me pasaron y me atendió Diego, él directamente”, comenzó.\r\n\r\n“Lo noté que se quedó sorprendido hasta que le pregunté si quería ver a Dieguito y me dijo: ‘¿Cómo está él?, hace un montón que no lo veo\'. Le dije que el nene lo quería ver, que está re grande, divino. Lo que yo quería era primero hablar con él, quería saber cómo estaba la situación, porque tenía un montón de versiones sobre su salud. Entonces, por todo eso, quería hablar, porque estuve 9 años de novia con él y sé cuando está mal y cuando está bien, sé cómo hablar con él para darme cuenta”.', 'enlace', 'georeferencia', 'noticia1.jpg', 'G', 4, 1, 1, 1),
 (3, 'Titulo 2', 'texto de noticia 2', 'enlace2', 'georeferencia2', NULL, 'P', 4, 1, 1, 0),
 (4, 'Título 3', 'noticia 3', 'enlace3', 'georeferencia3', 'noticia3.jpg', 'P', 4, 1, 1, 0),
-(21, 'Titulo 4', 'texto titulo 4', 'enlace4', 'georeferencia4', 'noticia4.jpg', 'G', 4, 4, 2, 1),
+(21, '10 consejos para cuidar tu jardín', '¿Eres de los afortunados que tienen jardín propio? Si es así, no lo desaproveches y disfruta del buen tiempo, en el mejor entorno, sin salir de tu casa. Te damos los 10 cuidados de un jardín que no debes pasar por alto:\r\n\r\n \r\n\r\n1- El suelo. La limpieza y el buen mantenimiento del suelo es básico para poder disfrutar de un jardín perfectamente acondicionado.\r\n\r\n2- Aire. Evidentemente nuestro jardín debe ser un espacio aireado, en el que las plantas puedan crecer sin problemas. La falta de ventilación puede provocar la aparición de hongos.\r\n\r\n3. Espacio. Debemos dejar que nuestras plantas y arbustos tengan espacio entre ellas, ya que, de lo contrario, pueden producirse malformaciones en el crecimiento de las mismas y, también, hay más facilidad para que se propaguen enfermedades o plagas de una planta a otra.\r\n\r\n4- Insectos. Es fundamental controlar las plagas de insectos y bacterias que atacan a las plantas. Hay infinidad de productos en el mercado, como repelentes o bactericidas, que pueden ayudarte a conseguirlo.\r\n\r\n5- Abonado. Abonar el jardín es un aspecto básico de la jardinería. Hay que tener en cuenta que debe hacerse en función de la demanda, es decir, si nuestro jardín tiene un elevado número de plantas con flores, requerirá mayor cantidad de abono y mayor frecuencia. También es importante saber que la época propicia para abonar es en los meses de primavera y verano.\r\n\r\n6- Malas hierbas. Es fundamental quitar esas hierbas que crecen donde no deben. Es saludable para el jardín y, además, mejora la imagen y el aspecto del mismo.\r\n\r\n7- Riego. Es fundamental regar el jardín, sin embargo, hay que hacerlo con precaución: debemos evitar el exceso de humedad, ya que puede provocar que las plantas se pudran. Además, es necesario saber que la mejor forma de regar es mediante aspersión porque resulta menos dañina para las plantas y el agua penetra poco a poco en el suelo.\r\n\r\n8- Siembra de bulbos. Resulta básico conocer y respetar los períodos concretos para plantar los diferentes tipos de plantas y arbustos. Existen diferentes épocas de floración y de cultivo.\r\n\r\n9- La poda. Al igual que con la siembra, debemos saber que cada planta o árbol tiene un momento concreto para ser podado. Los arbustos que florecen desde finales de invierno hasta principios de primavera, deben ser podados después de la floración, mientras que las plantas que florecen a finales de primavera o en verano, deben ser podadas durante el invierno.\r\n\r\n10- Combinación de plantas. Ésta, quizá,  sea una de las partes preferidas de los apasionados del mundo vegetal, Crear un jardín, terraza o patio con nuestras flores y plantas preferidas es un lujo. Geranios con petunias y margaritas con tulipanes son algunas de las combinaciones que darán un aspecto genial a tus macetas.', 'enlace4', 'georeferencia4', 'noticia4.jpg', 'G', 4, 4, 7, 1),
 (22, 'La Messi App: así quedaría con la camiseta de cada posible destino', 'La bomba estalló en España y el temblor sacudió a cada uno de los rincones del planeta fútbol. La po', 'enlace5', 'georeferencia5', 'imagen_messi.jpg', 'P', 4, 1, 2, 1),
-(23, 'Título 5', 'Texto noticia 5', 'enlace5', 'georeferencia5', 'imagen5.jpg', 'G', 4, 4, 1, 1),
-(24, 'Título 6', 'Texto de noticia 6', 'enlace6', 'georeferencia6', 'noticia6.jpg', 'P', 4, 4, 1, 1);
+(23, 'CUIDADOS DEL CÉSPED EN INVIERNO', 'Está claro que si hemos aplicado una buena capa de abono de liberación lenta durante el otoño habremos protegido, a priori, el césped del invierno. Sin embargo, y más allá de esta precaución, es importante llevar a cabo algunas tareas añadidas vitales para su mantenimiento.\r\n\r\nPara empezar, es importante retirar con un rastrillo las hojas secas y húmedas que estarán comenzando a descomponerse sobre el césped. Lejos de pensar que puede ser un buen abono natural, lo cierto es que la presencia de bajas temperaturas y hielo puede convertir las hojas no solo en una ayuda perfecta para que el césped se pudra sino, además, en una fuente ideal para uno de los grandes enemigos del césped: los hongos.', 'enlace5', 'georeferencia5', 'imagen5.jpg', 'G', 4, 4, 7, 1),
+(24, 'Título 6', 'Texto de noticia 6', 'enlace6', 'georeferencia6', 'noticia6.jpg', 'P', 4, 4, 1, 1),
+(25, '¿Gaich se va a Rusia?', 'No es ninguna novedad que Adolfo Gaich es una de las grandes joyitas de la cantera que tiene San Lorenzo. Es uno de los jugadores del plantel que más cantidad de millones cotiza y todos saben que no se quedará mucho tiempo más en el club. Incluso, casi a diario aparecen versiones sobre clubes de Europa que lo tienen en la mira, aunque pocas llegan a concretarse en ofertas formales. Sin embargo, esta vez hay un interés real que llega desde Rusia.\r\n\r\nSus grandes rendimientos y goles en la Sub 20, que incluso lo llevaron a ser convocado por Lionel Scaloni para la Selección Mayor; sumado a lo que mostró en la Primera del Ciclón cuando le tocó jugar, lo hacen un delantero muy prometedor y por eso desde los clubes más importantes del mundo lo siguen de cerca.', 'enlace7', 'georeferencia7', 'noticia7.jpg', 'G', 4, 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,8 @@ INSERT INTO `seccion` (`id_seccion`, `descripcion`, `habilitado`) VALUES
 (2, 'Deporte', 1),
 (3, 'Policial', 1),
 (4, 'Economía', 1),
-(6, 'Fútbol', 0);
+(6, 'Fútbol', 1),
+(7, 'Jardín', 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +209,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `publicacion`
@@ -219,7 +221,7 @@ ALTER TABLE `publicacion`
 -- AUTO_INCREMENT de la tabla `seccion`
 --
 ALTER TABLE `seccion`
-  MODIFY `id_seccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_seccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `suscripcion`
