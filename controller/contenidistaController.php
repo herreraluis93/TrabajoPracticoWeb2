@@ -168,6 +168,8 @@
         }
 
         public function misNoticias(){
+            $noticia = new NoticiaModel();
+            $misN
             include_once("view/misNoticias.php");
         }
 

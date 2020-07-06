@@ -85,8 +85,27 @@
             header("Location:".base_url);
         }
 
-        //*****************************OBTENER TODAS LAS NOTICIAS *******************************/
+        //*****************************OBTIENE LAS REVISTAS HABILITADAS, SEGÚN EL NIVEL DE USUARIO**********************/
+        public function revistas(){
+            $noticia = new NoticiaModel();
+            if(isset($_SESSION['usuario'])){
+                $revistas = $noticia->obtenerRevistas();
+            }else{
+                $revistas = $noticia->obtenerRevistasGratuitas();
+            }
+            include_once("view/revistasView.php");
+        }
 
+        //*****************************OBTIENE LOS DIARIOS HABILITADOS, SEGÚN EL NIVEL DE USUARIO**********************/
+        public function diarios(){
+            $noticia = new NoticiaModel();
+            if(isset($_SESSION['usuario'])){
+                $diarios = $noticia->obtenerDiarios();
+            }else{
+                $diarios = $noticia->obtenerDiariosGratuitos();
+            }
+            include_once("view/diariosView.php");
+        }
 
         public function lector(){
             include_once("view/lectorView.php");

@@ -40,7 +40,7 @@
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a> 
     <u>Revistas</u> 
-    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
+    <a href="<?=base_url?>noticia/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
   </div>
 </nav>
     </div>
@@ -87,7 +87,7 @@
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociedad</a>
     <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">El Mundo</a>
     <u>Revistas</u> 
-    <a href="<?=base_url?>lector/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
+    <a href="<?=base_url?>noticia/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
   </div>
 </nav>
     </div>

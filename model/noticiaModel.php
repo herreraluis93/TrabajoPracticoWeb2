@@ -63,11 +63,34 @@
             return $resultado;
         }
 
+        /*************OBTENER NOTICIAS DE REVISTAS, QUE PAGÓ EL LECTOR****************/
+        public function obtenerRevistas(){
+            $sql = "SELECT * FROM  publicacion P JOIN noticia N ON P.id_publicacion=N.id_publicacion WHERE P.tipo='Revista'";
+            $revistas = $this->db->querySelectRevistas($sql);
+
+            $resultado = array();
+            if($revistas){
+                $resultado = $revistas;
+            }
+            return $resultado;
+        }
+
         /********************************OBTENER NOTICIAS GRATUITAS DE LAS REVISTAS****************/
         public function obtenerRevistasGratuitas(){
-            $sql = "SELECT * FROM  noticia WHERE tipo='G' AND habilitado = 1";
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Revista'";
             $noticias = $this->db->querySelectNoticias($sql);
-            $resultado = false;
+            $resultado = array();
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }
+
+        /********************************OBTENER NOTICIAS GRATUITAS DE LAS DIARIOS****************/
+        public function obtenerDiariosGratuitos(){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Diario'";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = array();
             if($noticias){
                 $resultado = $noticias;
             }

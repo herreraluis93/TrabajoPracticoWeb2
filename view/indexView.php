@@ -1,6 +1,6 @@
 <div class="contenedor"> 
 <div class="diario">
-    <a href="<?=base_url?>lector/diarios">  
+    <a href="<?=base_url?>noticia/diarios">  
         
             <img src="<?=base_url?>img/tapaDiario.jpg">
       
@@ -9,7 +9,7 @@
     </a>
     
     <div class="revistas">
-        <a href="<?=base_url?>lector/revistas">    
+        <a href="<?=base_url?>noticia/revistas">    
             
                 <img src="<?=base_url?>img/tapaRevista.jpg">
         

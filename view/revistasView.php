@@ -1,4 +1,5 @@
 <div class="contenedorRevistas">
+    <?php if(count($revistas) != 0): ?>
         <?php
             foreach($revistas as $revista):
         ?>
@@ -11,6 +12,9 @@
         <?php
             endforeach;
         ?>
+    <?php else: ?>
+        <h3>No hay revistas disponibles</h3>
+    <?php endif; ?>
     </div>
 </div>
 
