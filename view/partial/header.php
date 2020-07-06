@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<?=base_url?>view/css/estilosContenidista.css" />
 <link rel="stylesheet" href="<?=base_url?>view/css/estilosNoticia.css" />
 <link rel="stylesheet" href="<?=base_url?>view/css/estilosSeccion.css" />
+<link rel="stylesheet" href="<?=base_url?>view/css/estilosHabilitar.css" />
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUaKDrKqot3_HqieO1CBktUN-O2D5c69Q&callback=initMap&libraries=&v=weekly" defer></script>
 <script src="<?=base_url?>view/js/javascript.js"></script>

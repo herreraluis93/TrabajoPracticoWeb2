@@ -1,22 +1,19 @@
-<br/>
-<br/>
-<br/>
-<br/>
+<div class="contenedorHabilitar">
+  <h2>HABILITAR PUBLICACION</h2>
+  <?php if(isset($_SESSION['publicacionHabilitada']) && $_SESSION['publicacionHabilitada'] == true): ?>
+          <strong class="alertGreen">Publicación Habilitada</strong>
+  <?php elseif(isset($_SESSION['publicacionHabilitada']) && $_SESSION['publicacionHabilitada'] == false): ?>
+          <strong class="alertRed">Publicación no Habilitada</strong>
+  <?php endif; ?>
+  <?php Utils::borrarSesion('publicacionHabilitada'); ?>
+  <?php if(isset($_SESSION['publicacionDeshabilitada']) && $_SESSION['publicacionDeshabilitada'] == true): ?>
+          <strong class="alertGreen">Publicación Deshabilitada</strong>
+  <?php elseif(isset($_SESSION['publicacionDeshabilitada']) && $_SESSION['publicacionDeshabilitada'] == false): ?>
+          <strong class="alertRed">Publicación no Deshabilitada</strong>
+  <?php endif; ?>
+  <?php Utils::borrarSesion('publicacionDeshabilitada'); ?>
 
-<?php if(isset($_SESSION['publicacionHabilitada']) && $_SESSION['publicacionHabilitada'] == true): ?>
-        <strong class="alertGreen">Publicación Habilitada</strong>
-<?php elseif(isset($_SESSION['publicacionHabilitada']) && $_SESSION['publicacionHabilitada'] == false): ?>
-        <strong class="alertRed">Publicación no Habilitada</strong>
-<?php endif; ?>
-<?php Utils::borrarSesion('publicacionHabilitada'); ?>
-<?php if(isset($_SESSION['publicacionDeshabilitada']) && $_SESSION['publicacionDeshabilitada'] == true): ?>
-        <strong class="alertGreen">Publicación Deshabilitada</strong>
-<?php elseif(isset($_SESSION['publicacionDeshabilitada']) && $_SESSION['publicacionDeshabilitada'] == false): ?>
-        <strong class="alertRed">Publicación no Deshabilitada</strong>
-<?php endif; ?>
-<?php Utils::borrarSesion('publicacionDeshabilitada'); ?>
-
-<table style="width:100%">
+<table style="width:70%">
   <tr>
     <th>ID_PUBLICACIÓN</th>
     <th>NOMBRE</th>
@@ -57,3 +54,4 @@
 <?php   endforeach; ?>
 
 </table>
+    </div>
