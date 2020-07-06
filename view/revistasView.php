@@ -6,9 +6,11 @@
         <div class="revista">
             <h1><?=$revista[1]?></h1>
             <p><?=$revista[2]?></p>
-            <p><?=$revista[4]?></p>
-            <img src="<?=base_url?>img/<?=$revista[5]?>">
+            <img src="<?=base_url?>img/<?=$revista[5]?>" />
         </div>
+        <br/>
+        <br/>
+        <br/>
         <?php
             endforeach;
         ?>

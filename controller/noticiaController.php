@@ -119,5 +119,12 @@
             Utils::borrarSesion('usuario');
             header("Location:".base_url);
         }
+
+        //**********************OBTIENE TODAS LAS NOTICIAS QUE CREÓ EL CONTENIDISTA REGISTRADO**********/
+        public function misNoticias(){
+        //    $noticia = new NoticiaModel();
+        //    $misNoticias = $Noticia->obtenerMisNoticias();
+            include_once("view/misNoticias.php");
+        }
     }
 ?>
