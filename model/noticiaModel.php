@@ -97,6 +97,17 @@
             return $resultado;
         }
 
+        /********************OBTENER LAS NOTICIAS QUE CREÓ EL CONTENIDISTA QUE ESTÁ LOGUEADO****************/
+        /*public function obtenerDiariosGratuitos(){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Diario'";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = array();
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }*/
+
         public function guardarNoticia(){
             $sql = "INSERT INTO  noticia (id_noticia,titulo,texto,enlace,georeferencia,imagenes,tipo,id_usuario,id_publicacion,id_seccion,habilitado) VALUES(NULL,?,?,?,?,?,?,?,?,?,?)";
             $stmt = $this->db->queryInsertarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->usuario,$this->publicacion,$this->seccion,0);
