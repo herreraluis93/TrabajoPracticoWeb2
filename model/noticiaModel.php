@@ -114,6 +114,16 @@
             $this->db->close();
             return $stmt;
         }
+
+        /*******OBTIENE TODAS LAS NOTICIAS DEL ID DE USUARIO(CONTENIDISTA) QUE SE RECIBE POR PARÁMETRO*** */
+        public function obtenerMisNoticias($id){
+            $sql = "SELECT N.titulo, P.tipo, P.fecha_public, P.numero, S.descripcion, N.habilitado FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion JOIN seccion S ON N.id_seccion=S.id_seccion WHERE N.id_usuario=$id";
+            $stmt = $this->db->querySelectNoticias($sql);
+            $this->db->close();
+            return $stmt;
+        }
+
+
         public function setTitulo($titulo){
             $this->titulo = $titulo;
         }

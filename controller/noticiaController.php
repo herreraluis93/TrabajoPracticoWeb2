@@ -122,8 +122,8 @@
 
         //**********************OBTIENE TODAS LAS NOTICIAS QUE CREÓ EL CONTENIDISTA REGISTRADO**********/
         public function misNoticias(){
-        //    $noticia = new NoticiaModel();
-        //    $misNoticias = $Noticia->obtenerMisNoticias();
+            $noticia = new NoticiaModel();
+            $misNoticias = $noticia->obtenerMisNoticias($_SESSION['usuario']->id_usuario);
             include_once("view/misNoticias.php");
         }
     }
