@@ -27,7 +27,8 @@
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left;">InfoNete</a>
             <a href="<?=base_url?>usuario/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cerrar Sesión</a>
-            <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Bienvenido, <?php echo $_SESSION['usuario']->nombre ?></a> 
+            <a href="<?=base_url?>lector/suscripcion" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Suscribirse</a>
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Bienvenido,<?php echo $_SESSION['usuario']->nombre ?></a> 
         </div>
         <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:45px;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
@@ -45,7 +46,6 @@
   </div>
 </nav>
     </div>
-  
 <?php elseif(isset($_SESSION['usuario']) && $_SESSION['usuario']->rol == 'contenidista'): ?>
     <div class="w3-top">
         <div class="w3-bar w3-blue w3-card">
