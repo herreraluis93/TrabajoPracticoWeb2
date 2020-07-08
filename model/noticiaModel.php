@@ -160,5 +160,4 @@
             $this->imagen = $imagen;
         }
     }
-
 ?>
