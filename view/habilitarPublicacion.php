@@ -12,7 +12,6 @@
           <strong class="alertRed">Publicación no Deshabilitada</strong>
   <?php endif; ?>
   <?php Utils::borrarSesion('publicacionDeshabilitada'); ?>
-
 <table style="width:70%">
   <tr>
     <th>ID_PUBLICACIÓN</th>
@@ -50,8 +49,6 @@
         </td>
     <?php endif; ?>
   </tr>
-
 <?php   endforeach; ?>
-
 </table>
     </div>

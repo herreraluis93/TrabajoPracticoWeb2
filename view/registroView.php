@@ -3,8 +3,6 @@
             <img src="<?=base_url?>img/back-button.png">
     </a>    
     <h1>Registrarse</h1>
-
-
     <?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'Completo'): ?>
         <strong class="alertGreen">Registro guardado correctamente</strong>
     <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'Fallo'): ?>
