@@ -89,7 +89,15 @@
         public function revistas(){
             $noticia = new NoticiaModel();
             if(isset($_SESSION['usuario'])){
-                $revistas = $noticia->obtenerRevistas();
+                $suscripcion = $noticia->obtenerSuscripcion($_SESSION['usuario']->id_usuario,'Revista');
+                //tengo que evaluar si la fecha de fin de susc es mayor a la fecha actual o si trae suscripcion
+                if($suscripcion){
+                    $fecha_ini = $suscripcion[0][2];
+                    $fecha_fin = $suscripcion[0][3];
+                    $revistas = $noticia->obtenerRevistas($fecha_ini,$fecha_fin);
+                }else{
+                    $revistas = $noticia->obtenerRevistasGratuitas();                    
+                }
             }else{
                 $revistas = $noticia->obtenerRevistasGratuitas();
             }
@@ -100,7 +108,15 @@
         public function diarios(){
             $noticia = new NoticiaModel();
             if(isset($_SESSION['usuario'])){
-                $diarios = $noticia->obtenerDiarios();
+                $suscripcion = $noticia->obtenerSuscripcion($_SESSION['usuario']->id_usuario,'Diario');
+                //tengo que evaluar si la fecha de fin de susc es mayor a la fecha actual o si trae suscripcion
+                if($suscripcion){
+                    $fecha_ini = $suscripcion[0][2];
+                    $fecha_fin = $suscripcion[0][3];
+                    $diarios = $noticia->obtenerDiarios($fecha_ini,$fecha_fin);
+                }else{
+                    $diarios = $noticia->obtenerDiariosGratuitos();
+                }
             }else{
                 $diarios = $noticia->obtenerDiariosGratuitos();
             }

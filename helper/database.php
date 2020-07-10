@@ -98,6 +98,23 @@ class Database{
         return $resultado;
     }
 
+
+    //**********EJECUTA EL SQL PARA OBTENER LA SUSCRIPCION INDICADA POR EL PARÁMETRO SQL***************
+    public function querySelectSuscripcion($sql){
+        
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+    
+        //guardo el resultado en un objeto mysqli_result
+        $usuario = $stmt->get_result();
+        if($usuario->num_rows != 0){
+            $resultado = $usuario->fetch_all(MYSQLI_NUM);
+        }else{
+            $resultado = false;
+        }
+        return $resultado;
+    }
+
     //*********************************INSERTA UNA NUEVA NOTICIA*************************************
     public function queryInsertarNoticia($sql,$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$usuario,$publicacion,$seccion,$habilitado){
         $stmt = $this->conexion->prepare($sql);

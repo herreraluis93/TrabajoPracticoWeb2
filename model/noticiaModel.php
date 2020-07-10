@@ -63,14 +63,13 @@
             return $resultado;
         }
 
-        /*************OBTENER NOTICIAS DE REVISTAS, QUE PAGÓ EL LECTOR****************/
-        public function obtenerRevistas(){
-            $sql = "SELECT * FROM  publicacion P JOIN noticia N ON P.id_publicacion=N.id_publicacion WHERE P.tipo='Revista'";
-            $revistas = $this->db->querySelectRevistas($sql);
-
+        /*************OBTENER LA SUSCRIPCION A DIARIO O REVISTA QUE TIENE EL LECTOR****************/
+        public function obtenerSuscripcion($id_usuario,$suscripto_a){
+            $sql = "SELECT * FROM suscripcion S WHERE S.suscripto_a='$suscripto_a' AND S.id_usuario=$id_usuario ORDER BY fecha_fin DESC LIMIT 1";
+            $suscripcion = $this->db->querySelectSuscripcion($sql);
             $resultado = array();
-            if($revistas){
-                $resultado = $revistas;
+            if($suscripcion){
+                $resultado = $suscripcion;
             }
             return $resultado;
         }
@@ -86,9 +85,31 @@
             return $resultado;
         }
 
+        /********************************OBTENER NOTICIAS PAGAS DE LAS REVISTAS****************/
+        public function obtenerRevistas($fecha_ini,$fecha_fin){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.habilitado=1 AND P.tipo='Revista' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin'";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = array();
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }
+
         /********************************OBTENER NOTICIAS GRATUITAS DE LAS DIARIOS****************/
         public function obtenerDiariosGratuitos(){
             $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Diario'";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = array();
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }
+
+        /********************************OBTENER NOTICIAS PAGAS DE LAS DIARIOS****************/
+        public function obtenerDiarios($fecha_ini,$fecha_fin){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.habilitado=1 AND P.tipo='Diario' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin'";
             $noticias = $this->db->querySelectNoticias($sql);
             $resultado = array();
             if($noticias){
