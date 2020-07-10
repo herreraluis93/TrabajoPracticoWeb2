@@ -240,9 +240,7 @@ body {
           transform-style: preserve-3d;
 }
 .container .col1 .card .front {
-  position: absolute;
-  background: blue;
-  border-radius: 17px;
+  position: absolute; 
   padding: 50px;
   width: 100%;
   height: 100%;
@@ -255,6 +253,13 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
+.card img{
+  width: 100%;
+  height: 100%;
+  border-radius: 17px;
+}
+
 .container .col1 .card .front .type {
   position: absolute;
   width: 75px;
@@ -264,6 +269,7 @@ body {
 }
 .container .col1 .card .front .type img {
   width: 100%;
+  height: 30px;
   float: right;
 }
 .container .col1 .card .front .card_number {
@@ -329,6 +335,10 @@ body {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
+
+.back img{
+  position: absolute;
+}
 .container .col1 .card .back .magnetic {
   position: absolute;
   width: 100%;
@@ -356,10 +366,15 @@ body {
   bottom: 45px;
   left: 10px;
 }
+
+.chip img{
+  width: 55px; 
+  height: 50px;
+}
 .container .col1 .card .back .disclaimer {
   position: absolute;
   width: 65%;
-  left: 80px;
+  left: 20px;
   color: #f1f1f1;
   font-size: 8px;
   bottom: 55px;
@@ -417,22 +432,14 @@ body {
   transition: background 0.4s;
 }
 
-.chip {
-  position: absolute;
-  width: 55px;
-  height: 40px;
-  background: #bbb;
-  border-radius: 7px;
-}
+
 .chip:after {
   content: '';
   display: block;
   width: 35px;
   height: 25px;
   border-radius: 4px;
-  position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
-  background: #ddd;
 }
