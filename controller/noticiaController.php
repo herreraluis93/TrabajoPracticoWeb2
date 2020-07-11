@@ -1,5 +1,7 @@
 <?php
     require_once 'model/noticiaModel.php';
+    require_once 'model/publicacionModel.php';
+    require_once 'model/seccionModel.php';
 
     class NoticiaController{
 
@@ -32,7 +34,6 @@
             }
             header("Location:".base_url.'noticia/habilitar');
         }
-
 
         public function guardar(){
             if(isset($_POST)){
@@ -141,6 +142,80 @@
             $noticia = new NoticiaModel();
             $misNoticias = $noticia->obtenerMisNoticias($_SESSION['usuario']->id_usuario);
             include_once("view/misNoticias.php");
+        }
+
+        /***********************EDITAR NOTICIA(EL CONTENIDISTA EDITA SUS PROPIAS NOTICIAS) **********/
+        public function editarNoticia(){
+            $publicacion = new PublicacionModel();
+            $publicaciones = $publicacion->obtenerPublicaciones();
+
+            $seccion = new SeccionModel();
+            $secciones = $seccion->obtenerSecciones();
+
+            $noticia = new NoticiaModel();
+            $miNoticia = $noticia->obtenerNoticia($_POST['id_noticia']);
+            include_once("view/editarNoticia.php");
+        }
+
+        /*******************************GUARDA LA NOTICIA EDITADA POR EL CONTENIDISTA **************** */
+        public function guardarCambios(){
+            if(isset($_POST)){
+                //hacer las validaciones de input
+                $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : false;
+                $texto = isset($_POST['texto']) ? $_POST['texto'] : false;
+                $enlace = isset($_POST['enlace']) ? $_POST['enlace'] : "";
+                $georeferencia = isset($_POST['georeferencia']) ? $_POST['georeferencia'] : false;
+                $tipoNoticia = isset($_POST['tipoNoticia']) ? $_POST['tipoNoticia'] : false;
+                $seccion = isset($_POST['seccion']) ? $_POST['seccion'] : false;
+                $publicacion = isset($_POST['publicacion']) ? $_POST['publicacion'] : false;
+
+                if($_FILES["imagen"]["error"] = 4){
+                    $imagen = $_POST['imagenAnterior'];
+                }else{
+                    if($_FILES["imagen"]["error"] > 0){
+                        $imagen = false;
+                        $_SESSION['errorImagen'] = false;
+                        header("Location:".base_url.'noticia/misNoticias');
+                        exit();
+                    }else{
+                        if(file_exists("img/". $_FILES["imagen"]["name"])){
+                            $imagen = false;
+                            $_SESSION['errorImagen'] = false;
+                            header("Location:".base_url.'noticia/misNoticias');
+                            exit();
+                        }else{
+                            $imagen = $_FILES["imagen"]["name"];      
+                        }
+                    }
+                }
+
+
+                if($titulo && $texto && $georeferencia && $imagen && $tipoNoticia && $seccion && $publicacion){
+                    $noticia = new NoticiaModel();
+                    $noticia->setTitulo($_POST['titulo']);
+                    $noticia->setTexto($_POST['texto']);
+                    $noticia->setEnlace($enlace);
+                    $noticia->setGeoreferencia($_POST['georeferencia']);
+                    $noticia->setImagen($imagen);
+                    $noticia->setTipoNoticia($_POST['tipoNoticia']);
+                    $noticia->setSeccion($_POST['seccion']);
+                    $noticia->setPublicacion($_POST['publicacion']);
+
+                    $noticia->setIdUsuario($_SESSION['usuario']->id_usuario);
+                    $valor = $noticia->actualizarNoticia($_POST['id_noticia']);
+                    if($valor){
+                        move_uploaded_file($_FILES["imagen"]["tmp_name"],"img/" . $_FILES["imagen"]["name"]);
+                        $_SESSION['noticiaEditada'] = true;
+                    }else{
+                        $_SESSION['noticiaEditada'] = false;
+                    }
+                }else{
+                    $_SESSION['noticiaEditada'] = false;
+                }
+            }else{
+                $_SESSION['noticiaEditada'] = false;
+            }
+            header("Location:".base_url.'noticia/misNoticias');
         }
     }
 ?>

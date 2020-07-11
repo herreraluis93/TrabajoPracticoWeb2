@@ -67,8 +67,6 @@
                 </select><br/><br/>
                 <input type="submit" value="Crear Noticia"/>
             </div>
-            
-            
         </form>
     </div>
 </div>

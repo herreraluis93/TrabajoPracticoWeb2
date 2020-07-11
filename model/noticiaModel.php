@@ -118,17 +118,6 @@
             return $resultado;
         }
 
-        /********************OBTENER LAS NOTICIAS QUE CREÓ EL CONTENIDISTA QUE ESTÁ LOGUEADO****************/
-        /*public function obtenerDiariosGratuitos(){
-            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Diario'";
-            $noticias = $this->db->querySelectNoticias($sql);
-            $resultado = array();
-            if($noticias){
-                $resultado = $noticias;
-            }
-            return $resultado;
-        }*/
-
         public function guardarNoticia(){
             $sql = "INSERT INTO  noticia (id_noticia,titulo,texto,enlace,georeferencia,imagenes,tipo,id_usuario,id_publicacion,id_seccion,habilitado) VALUES(NULL,?,?,?,?,?,?,?,?,?,?)";
             $stmt = $this->db->queryInsertarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->usuario,$this->publicacion,$this->seccion,0);
@@ -138,8 +127,24 @@
 
         /*******OBTIENE TODAS LAS NOTICIAS DEL ID DE USUARIO(CONTENIDISTA) QUE SE RECIBE POR PARÁMETRO*** */
         public function obtenerMisNoticias($id){
-            $sql = "SELECT N.titulo, P.tipo, P.fecha_public, P.numero, S.descripcion, N.habilitado FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion JOIN seccion S ON N.id_seccion=S.id_seccion WHERE N.id_usuario=$id";
+            $sql = "SELECT N.titulo, P.tipo, P.fecha_public, P.numero, S.descripcion, N.habilitado, N.id_noticia FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion JOIN seccion S ON N.id_seccion=S.id_seccion WHERE N.id_usuario=$id";
             $stmt = $this->db->querySelectNoticias($sql);
+            $this->db->close();
+            return $stmt;
+        }
+
+        /*******OBTIENE DE LA BASE DE DATOS, LA NOTICIA QUE SE PIDE POR PARÁMETRO*** */
+        public function obtenerNoticia($id){
+            $sql = "SELECT * FROM noticia N WHERE N.id_noticia=$id";
+            $stmt = $this->db->querySelectNoticias($sql);
+            $this->db->close();
+            return $stmt;
+        }
+
+        /********************************************************************************** */
+        public function actualizarNoticia($id_noticia){
+            $sql = "UPDATE noticia SET titulo=?, texto=?, enlace=?, georeferencia=?, imagenes=?, tipo=?, id_publicacion=?, id_seccion=?, habilitado=0 WHERE id_noticia='$id_noticia'";
+            $stmt = $this->db->queryActualizarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->publicacion,$this->seccion);
             $this->db->close();
             return $stmt;
         }

@@ -123,6 +123,16 @@ class Database{
         $stmt->close();
         return $resultado;
       }
+    
+    //*********************************ACTUALIZAR NOTICIA*************************************
+    public function queryActualizarNoticia($sql,$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$publicacion,$seccion){
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("ssssssii",$titulo,$texto,$enlace,$georeferencia,$imagen,$tipoNoticia,$publicacion,$seccion);
+        $resultado = $stmt->execute();
+        $stmt->close();
+        return $resultado;
+      }
+
 
     //*********************************UPDATE DE HABILITAR, DEHABILITAR NOTICIA*************************************
     //************SE UTILIZA PARA EJECUTAR LA QUERY DE HABILITAR O DESHABILITAR SECCIÓN,NOTICIA O PUBLICACIÓN */
