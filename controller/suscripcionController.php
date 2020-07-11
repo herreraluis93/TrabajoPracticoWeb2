@@ -9,6 +9,9 @@
             include_once("view/suscripcion.php");
         }
         
+        public function guardarSuscripcion(){
+            include_once("view/suscripcion.php");
+        }
 
     }
 ?>

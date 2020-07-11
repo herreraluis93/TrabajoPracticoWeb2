@@ -1,42 +1,4 @@
 $(function () {
-  var cards = [
-    {
-      nome: "mastercard",
-      colore: "#0061A8",
-      src:"img/Mastercard-logo.png"
-    },
-    {
-      nome: "visa",
-      colore: "#E2CB38",
-      src:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2000px-Visa_Inc._logo.svg.png"
-    },
-    {
-      nome: "dinersclub",
-      colore: "#888",
-      src:
-        "http://www.worldsultimatetravels.com/wp-content/uploads/2016/07/Diners-Club-Logo-1920x512.png"
-    },
-    {
-      nome: "americanExpress",
-      colore: "#108168",
-      src:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/American_Express_logo.svg/600px-American_Express_logo.svg.png"
-    },
-    {
-      nome: "discover",
-      colore: "#86B8CF",
-      src:
-        "https://lendedu.com/wp-content/uploads/2016/03/discover-it-for-students-credit-card.jpg"
-    },
-    {
-      nome: "dankort",
-      colore: "#0061A8",
-      src:
-        "https://upload.wikimedia.org/wikipedia/commons/5/51/Dankort_logo.png"
-    }
-  ];
-
   var month = 0;
   var html = document.getElementsByTagName("html")[0];
   var number = "";
