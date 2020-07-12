@@ -167,6 +167,15 @@ class Database{
         return $resultado;
     }
 
+    public function queryGuardarSuscripcion($sql,$tipoSuscripcion,$fechaIni,$fechaFin,$suscribirseA,$id_usuario){
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bind_param("ssssi",$tipoSuscripcion,$fechaIni,$fechaFin,$suscribirseA,$id_usuario);
+        $resultado = $stmt->execute();
+        $stmt->close();
+        return $resultado;
+    }
+    
+
     public function close(){
         $this->conexion->close();
     }

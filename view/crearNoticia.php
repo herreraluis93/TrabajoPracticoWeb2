@@ -22,8 +22,7 @@
 
                 <label for="imagen">Cargar Imagen</label>
                 <input type="file" name="imagen" ><br/><br/>
-
-                
+               
                 <label for="tipoNoticia">Tipo noticia</label>
                 <select name="tipoNoticia">
                     <option value="P">
