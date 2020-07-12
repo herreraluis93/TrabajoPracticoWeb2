@@ -43,7 +43,7 @@
     <?php
         foreach($secciones as $seccion):
     ?>
-        <a href="<?=base_url?>noticia/noticiaPorSeccion&id=<?= $seccion[0] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?=$seccion[1] ?></a>
+        <a href="<?=base_url?>noticia/noticiaPorSeccion&id=<?= $seccion[0] ?>&tipo=<?= $seccion[3] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?=$seccion[1] ?></a>
     <?php
         endforeach;
     ?>
@@ -92,7 +92,7 @@
     <?php
         foreach($secciones as $seccion):
     ?>
-        <a href="<?=base_url?>noticia/noticiaPorSeccion&id=<?= $seccion[0] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?=$seccion[1] ?></a>
+        <a href="<?=base_url?>noticia/noticiaPorSeccion&id=<?= $seccion[0] ?>&tipo=<?= $seccion[3] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?=$seccion[1] ?></a>
     <?php
         endforeach;
     ?>

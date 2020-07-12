@@ -222,20 +222,20 @@
         public function NoticiaPorseccion(){
             $noticia = new NoticiaModel();
             if(isset($_SESSION['usuario'])){
-                $suscripcion = $noticia->obtenerSuscripcion($_SESSION['usuario']->id_usuario,'Revista');
+                $suscripcion = $noticia->obtenerSuscripcion($_SESSION['usuario']->id_usuario,$_GET['tipo']);
                 //tengo que evaluar si la fecha de fin de susc es mayor a la fecha actual o si trae suscripcion
                 if($suscripcion){
                     $fecha_ini = $suscripcion[0][2];
                     $fecha_fin = $suscripcion[0][3];
-                    $revistas = $noticia->obtenerRevistas($fecha_ini,$fecha_fin);
+                    $noticias = $noticia->obtenerNoticiasPorSeccion($fecha_ini,$fecha_fin,$_GET['id'],$_GET['tipo']);
                 }else{
-                    $revistas = $noticia->obtenerRevistasGratuitas();                    
+                    $noticias = $noticia->obtenerNoticiasGratuitasPorSeccion($_GET['id'],$_GET['tipo']);
                 }
             }else{
-                $noticias = $noticia->obtenerNoticiasGratuitasPorSeccion($_GET['id']);
+                var_dump($_GET['tipo']);
+                $noticias = $noticia->obtenerNoticiasGratuitasPorSeccion($_GET['id'],$_GET['tipo']);
             }
             include_once("view/seccionNoticia.php");
-            die();
         }    
     }
 ?>

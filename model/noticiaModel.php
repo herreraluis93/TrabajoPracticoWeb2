@@ -51,28 +51,6 @@
             return $resultado;
         }
 
-        /*****************OBTIENE TODAS LAS NOTICIAS DE LA SECCIÓN INFORMADA POR PARÁMETRO ******************************/
-        public function obtenerNoticiasPorSeccion(){
-            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Revista'";
-            $noticias = $this->db->querySelectNoticias($sql);
-            $resultado = false;
-            if($noticias){
-                $resultado = $noticias;
-            }
-            return $resultado;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
         /********************************HABILITAR NOTICIA *********************************/
         public function habilitarNoticia($id_noticia,$habilitado){
             $sql = "UPDATE noticia SET habilitado=? WHERE id_noticia=?";
@@ -171,8 +149,19 @@
         }
 
         /********************************OBTENER NOTICIAS GRATUITAS DE LA SECCION CORRESPONDIENTE****************/
-        public function obtenerNoticiasGratuitasPorSeccion($idSeccion){
-            $sql = "SELECT * FROM  noticia WHERE id_seccion=$idSeccion AND tipo='G'";
+        public function obtenerNoticiasGratuitasPorSeccion($idSeccion,$tipo){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.id_seccion=$idSeccion AND N.tipo='G' AND N.habilitado=1 AND P.tipo='$tipo' AND P.habilitado=1";           
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = array();
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }
+
+        /********************************OBTENER NOTICIAS DE LA SECCION CORRESPONDIENTE****************/
+        public function obtenerNoticiasPorSeccion($fecha_ini,$fecha_fin,$idSeccion,$tipo){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.id_seccion=$idSeccion AND N.habilitado=1 AND P.tipo='$tipo' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin'";
             $noticias = $this->db->querySelectNoticias($sql);
             $resultado = array();
             if($noticias){
