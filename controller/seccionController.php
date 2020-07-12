@@ -62,7 +62,5 @@
             }
             header("Location:".base_url.'seccion/habilitar');
         }
-
-
     }
 ?>

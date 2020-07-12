@@ -1,5 +1,6 @@
 <?php
     require_once 'model/usuarioModel.php';
+    require_once 'model/seccionModel.php';
 
     class UsuarioController{
 
@@ -7,8 +8,8 @@
 
         public function index(){
             $vista = "view/indexView.php";
-            	if(isset($_SESSION['usuario'])){
-                	$vista = "view/inicio" . $_SESSION['usuario']->rol . ".php";
+            if(isset($_SESSION['usuario'])){
+              	$vista = "view/inicio" . $_SESSION['usuario']->rol . ".php";
             }
             include_once($vista);
         }

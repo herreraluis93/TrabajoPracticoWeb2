@@ -20,7 +20,7 @@
                 //hacer las validaciones de input
                 $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : false;
                 $texto = isset($_POST['texto']) ? $_POST['texto'] : false;
-                $enlace = isset($_POST['enlace']) ? $_POST['enlace'] : false;
+                $enlace = isset($_POST['enlace']) ? $_POST['enlace'] : "";
                 $georeferencia = isset($_POST['georeferencia']) ? $_POST['georeferencia'] : false;
                 $tipoNoticia = isset($_POST['tipoNoticia']) ? $_POST['tipoNoticia'] : false;
                 $seccion = isset($_POST['seccion']) ? $_POST['seccion'] : false;
@@ -37,7 +37,7 @@
                     }
                 }
 
-                if($titulo && $texto && $enlace && $georeferencia && $imagen && $tipoNoticia && $seccion && $publicacion){
+                if($titulo && $texto && $georeferencia && $imagen && $tipoNoticia && $seccion && $publicacion){
                     $noticia = new NoticiaModel();
                     $noticia->setTitulo($_POST['titulo']);
                     $noticia->setTexto($_POST['texto']);

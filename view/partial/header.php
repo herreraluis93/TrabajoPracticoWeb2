@@ -17,9 +17,9 @@
 <script src="<?=base_url?>view/js/suscripcion.js"></script>
 <script src="<?=base_url?>view/js/javascript.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <body>
 <!-- Navbar -->
 <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']->rol == 'lector'): ?>
@@ -34,14 +34,19 @@
         <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:45px;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-bar-block">
-    <u>Diarios</u>
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ultimas Noticias</a> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Deportes</a> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Economia</a> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a> 
-    <u>Revistas</u>
-    <a href="<?=base_url?>noticia/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
+    <u>Secciones</u>
+    <?php
+        require_once 'model/seccionModel.php';
+        $seccion = new SeccionModel();
+        $secciones = $seccion->obtenerSecciones();
+    ?>
+    <?php
+        foreach($secciones as $seccion):
+    ?>
+        <a href="<?=base_url?>noticia/noticiaPorSeccion&id=<?= $seccion[0] ?>&tipo=<?= $seccion[3] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?=$seccion[1] ?></a>
+    <?php
+        endforeach;
+    ?>
   </div>
 </nav>
     </div>
@@ -78,14 +83,19 @@
         <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:45px;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-bar-block">
-    <u>Diarios</u> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ultimas Noticias</a> 
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Deportes</a>
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Economia</a>
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a>
-    <a href="<?=base_url?>lector/diarios" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Politica</a>
-    <u>Revistas</u> 
-    <a href="<?=base_url?>noticia/revistas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Jardin</a>
+  <u>Secciones</u>
+  <?php
+        require_once 'model/seccionModel.php';
+        $seccion = new SeccionModel();
+        $secciones = $seccion->obtenerSecciones();
+    ?>
+    <?php
+        foreach($secciones as $seccion):
+    ?>
+        <a href="<?=base_url?>noticia/noticiaPorSeccion&id=<?= $seccion[0] ?>&tipo=<?= $seccion[3] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><?=$seccion[1] ?></a>
+    <?php
+        endforeach;
+    ?>
   </div>
 </nav>
     </div>

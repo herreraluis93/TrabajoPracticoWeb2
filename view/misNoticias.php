@@ -1,4 +1,15 @@
 <div class="contenedorHabilitar">
+<?php if(isset($_SESSION['noticiaEditada']) && $_SESSION['noticiaEditada'] == true): ?>
+      <strong class="alertGreen">Noticia editada correctamente</strong>
+<?php elseif(isset($_SESSION['noticiaEditada']) && $_SESSION['noticiaEditada'] == false): ?>
+      <strong class="alertRed">Noticia no editada correctamente</strong>
+<?php elseif(isset($_SESSION['errorImagen'])): ?>
+      <strong class="alertRed">Nombre de imagen ya existe</strong>
+<?php endif; ?>
+<?php
+  Utils::borrarSesion('noticiaEditada');
+  Utils::borrarSesion('errorImagen');
+?>
   <h2>MIS NOTICIAS</h2>
 
 <table style="width:70%;">
@@ -9,6 +20,7 @@
     <th>NÚMERO PUBLICACIÓN</th>
     <th>SECCIÓN</th>
     <th>NOTICIA HABILITADA/DESHABILITADA</th>
+    <th>EDITAR</th>
   </tr>
 
 
@@ -25,6 +37,12 @@
     <?php else: ?>
         <td>DESHABILITADA</td>
     <?php endif; ?>
+    <td>
+      <form action="<?=base_url?>noticia/editarNoticia" method="POST">
+        <input type="hidden" name="id_noticia" value="<?=$noticia[6]?>" /><br/>
+         <input type="submit" value="Editar Noticia"/>
+      </form>
+    </td>
   </tr>
 
 <?php   endforeach; ?>
