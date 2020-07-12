@@ -15,7 +15,7 @@
         
         <label>Georeferencia</label><br/>
         <input type="text" name="georeferencia" value="<?=$miNoticia[0][4]?>" size='<?php echo strlen($miNoticia[0][4])?>' required /><br/>
-        
+
         <label for="imagenes">Cargar Imagen</label>
         <input type="file" name="imagen" ><br/><br/>
 

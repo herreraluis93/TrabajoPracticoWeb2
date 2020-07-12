@@ -169,7 +169,7 @@
                 $seccion = isset($_POST['seccion']) ? $_POST['seccion'] : false;
                 $publicacion = isset($_POST['publicacion']) ? $_POST['publicacion'] : false;
 
-                if($_FILES["imagen"]["error"] = 4){
+                if($_FILES["imagen"]["error"] == 4){
                     $imagen = $_POST['imagenAnterior'];
                 }else{
                     if($_FILES["imagen"]["error"] > 0){
@@ -184,10 +184,10 @@
                             header("Location:".base_url.'noticia/misNoticias');
                             exit();
                         }else{
-                            $imagen = $_FILES["imagen"]["name"];      
+                            $imagen = $_FILES["imagen"]["name"];
                         }
                     }
-                }
+                }  
 
 
                 if($titulo && $texto && $georeferencia && $imagen && $tipoNoticia && $seccion && $publicacion){
@@ -217,5 +217,25 @@
             }
             header("Location:".base_url.'noticia/misNoticias');
         }
+    
+        //**********************OBTIENE TODAS LAS NOTICIAS DE LA SECCIÓN INFORMADA POR GET**********/
+        public function NoticiaPorseccion(){
+            $noticia = new NoticiaModel();
+            if(isset($_SESSION['usuario'])){
+                $suscripcion = $noticia->obtenerSuscripcion($_SESSION['usuario']->id_usuario,'Revista');
+                //tengo que evaluar si la fecha de fin de susc es mayor a la fecha actual o si trae suscripcion
+                if($suscripcion){
+                    $fecha_ini = $suscripcion[0][2];
+                    $fecha_fin = $suscripcion[0][3];
+                    $revistas = $noticia->obtenerRevistas($fecha_ini,$fecha_fin);
+                }else{
+                    $revistas = $noticia->obtenerRevistasGratuitas();                    
+                }
+            }else{
+                $noticias = $noticia->obtenerNoticiasGratuitasPorSeccion($_GET['id']);
+            }
+            include_once("view/seccionNoticia.php");
+            die();
+        }    
     }
 ?>

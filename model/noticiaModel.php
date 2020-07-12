@@ -51,6 +51,27 @@
             return $resultado;
         }
 
+        /*****************OBTIENE TODAS LAS NOTICIAS DE LA SECCIÓN INFORMADA POR PARÁMETRO ******************************/
+        public function obtenerNoticiasPorSeccion(){
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.tipo='G' AND N.habilitado=1 AND P.tipo='Revista'";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = false;
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         /********************************HABILITAR NOTICIA *********************************/
         public function habilitarNoticia($id_noticia,$habilitado){
@@ -147,6 +168,17 @@
             $stmt = $this->db->queryActualizarNoticia($sql,$this->titulo,$this->texto,$this->enlace,$this->georeferencia,$this->imagen,$this->tipoNoticia,$this->publicacion,$this->seccion);
             $this->db->close();
             return $stmt;
+        }
+
+        /********************************OBTENER NOTICIAS GRATUITAS DE LA SECCION CORRESPONDIENTE****************/
+        public function obtenerNoticiasGratuitasPorSeccion($idSeccion){
+            $sql = "SELECT * FROM  noticia WHERE id_seccion=$idSeccion AND tipo='G'";
+            $noticias = $this->db->querySelectNoticias($sql);
+            $resultado = array();
+            if($noticias){
+                $resultado = $noticias;
+            }
+            return $resultado;
         }
 
 
