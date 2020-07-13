@@ -86,7 +86,7 @@
 
         /********************************OBTENER NOTICIAS PAGAS DE LAS REVISTAS****************/
         public function obtenerRevistas($fecha_ini,$fecha_fin){
-            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.habilitado=1 AND P.tipo='Revista' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin'";
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE (N.habilitado=1 AND P.tipo='Revista' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<='$fecha_fin' AND N.tipo='P') OR (N.habilitado=1 AND P.tipo='Revista' AND P.habilitado=1 AND N.tipo='G')";
             $noticias = $this->db->querySelectNoticias($sql);
             $resultado = array();
             if($noticias){
@@ -108,7 +108,7 @@
 
         /********************************OBTENER NOTICIAS PAGAS DE LAS DIARIOS****************/
         public function obtenerDiarios($fecha_ini,$fecha_fin){
-            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.habilitado=1 AND P.tipo='Diario' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin'";
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE (N.habilitado=1 AND P.tipo='Diario' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<='$fecha_fin' AND N.tipo='P') OR (N.habilitado=1 AND P.tipo='Diario' AND P.habilitado=1 AND N.tipo='G')";
             $noticias = $this->db->querySelectNoticias($sql);
             $resultado = array();
             if($noticias){
@@ -161,7 +161,7 @@
 
         /********************************OBTENER NOTICIAS DE LA SECCION CORRESPONDIENTE****************/
         public function obtenerNoticiasPorSeccion($fecha_ini,$fecha_fin,$idSeccion,$tipo){
-            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE N.id_seccion=$idSeccion AND N.habilitado=1 AND P.tipo='$tipo' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin'";
+            $sql = "SELECT * FROM  noticia N JOIN publicacion P ON P.id_publicacion=N.id_publicacion WHERE (N.id_seccion=$idSeccion AND N.habilitado=1 AND P.tipo='$tipo' AND P.habilitado=1 AND P.fecha_public>='$fecha_ini' AND P.fecha_public<'$fecha_fin' AND N.tipo='P') OR (N.id_seccion=$idSeccion AND N.habilitado=1 AND P.tipo='$tipo' AND P.habilitado=1 AND N.tipo='G')";
             $noticias = $this->db->querySelectNoticias($sql);
             $resultado = array();
             if($noticias){

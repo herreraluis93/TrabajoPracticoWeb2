@@ -15,7 +15,6 @@
 
   <table style="width:70%">
     <tr>
-      <th>ID_SECCION</th>
       <th>DESCRIPCIÓN</th> 
       <th>HABILITAR/DESHABILITAR</th>
     </tr>
@@ -24,7 +23,6 @@
   <?php foreach($todasSecciones as $seccion): ?>
 
     <tr>
-      <td><?=$seccion[0] ?></td>
       <td><?=$seccion[1] ?></td>
       <?php if($seccion[2] == 1): ?> 
           <td>

@@ -31,7 +31,7 @@
             <label for="numero">Numero</label>
             <input type="number" name="numero" required/><br/>
 
-            <input type="submit" value="Crear Publicación"/>
+            <input class="btnGuardarEdicion" type="submit" value="Crear Publicación"/>
         </form>
     </div>
     </div>

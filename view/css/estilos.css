@@ -11,18 +11,28 @@
     color: red;
 }
 
+.logo{
+  color: antiquewhite;
+  font-size: 24px;
+  font-style: italic;
+  margin-left: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-color: antiquewhite;
+  border-style: solid;
+  padding: 7px;
+  float: left;
+}
+
 .revistas{   
     margin-left:50px;
     margin-right:40px;
     margin-top: 150px;
-    background-color: red;
     width: 300px;
     height: 400px;
 }
 
 
 .diario{
-    background-color: black;
     margin-left:400px;
     margin-right:40px;
     margin-top: 150px;
@@ -30,7 +40,7 @@
     height: 400px;
 }
 
-.contenedorRevistas{
+.contenedorNoticias{
     margin-left:340px;
     margin-right:40px;
     margin-top: 100px;
@@ -49,6 +59,21 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.revista h1{
+  margin: 20px;
+}
+
+.revista p{
+  margin-left: 20px;
+  width: 900px;
+  text-align: justify;
+}
+
+.revista img{
+  margin:20px;
+  width: 900px;
 }
 
 .contenedor h1{

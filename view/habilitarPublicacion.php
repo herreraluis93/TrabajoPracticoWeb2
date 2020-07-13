@@ -14,8 +14,6 @@
   <?php Utils::borrarSesion('publicacionDeshabilitada'); ?>
 <table style="width:70%">
   <tr>
-    <th>ID_PUBLICACIÓN</th>
-    <th>NOMBRE</th>
     <th>TIPO</th>
     <th>FECHA</th>
     <th>NÚMERO</th> 
@@ -26,8 +24,6 @@
 <?php foreach($todasPublicaciones as $publicacion): ?>
 
   <tr>
-    <td><?=$publicacion[0] ?></td>
-    <td><?=$publicacion[1] ?></td>
     <td><?=$publicacion[2] ?></td>
     <td><?=$publicacion[3] ?></td>
     <td><?=$publicacion[4] ?></td>

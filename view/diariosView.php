@@ -1,16 +1,15 @@
-<div class="contenedorRevistas">
+<div class="contenedorNoticias">
+<h1>Noticias de Diario</h1>
     <?php if(count($diarios) != 0): ?>
         <?php
             foreach($diarios as $diario):
         ?>
-        <div class="revista">
-            <h1><?=$diario[1]?></h1>
+        <div class="revista" style="border-style:outset">
+            <h1><?=$diario[1]?></h1><br>
             <p><?=$diario[2]?></p>
             <img src="<?=base_url?>img/<?=$diario[5]?>">
         </div>
-        <br/>
-        <br/>
-        <br/>
+        <p style="font-size:40px; text-align:center;" >:::::::::::::::::::::::::::::::::::::::::::::::::</p>
         <?php
             endforeach;
         ?>

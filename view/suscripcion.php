@@ -1,12 +1,15 @@
 <h2 style="margin-top:100px;margin-left:400px">Formulario de Suscripcion</h2>
-<div class="container" style="margin-top:120px;margin-left:450px">
-<?php if(isset($_SESSION['suscripcionRealizada']) && $_SESSION['suscripcionRealizada'] == true): ?>
+<?php if(isset($_SESSION['suscripcionGuardada']) && $_SESSION['suscripcionGuardada'] == true): ?>
         <strong class="alertGreen">Suscripcion realizada con exito!</strong>
-        <?php elseif(isset($_SESSION['suscripcionRealizada']) && $_SESSION['suscripcionRealizada'] == false): ?>
+        <?php elseif(isset($_SESSION['suscripcionGuardada']) && $_SESSION['suscripcionGuardada'] == false): ?>
         <strong class="alertRed">Suscripcion no realizada</strong>
         <?php endif; ?>
-        <?php Utils::borrarSesion('suscripcionRealizada'); ?>
+        <?php Utils::borrarSesion('suscripcionGuardada'); ?>
+<div class="container" style="margin-top:120px;margin-left:450px">
+
   <div class="col1">
+  <p style="color:red;font-size:24px">Suscripcion Mensual: $450</p>
+  <p style="color:red;font-size:24px">Suscripcion Semanal: $140</p>
     <div class="card">
       <img src="<?=base_url?>img/fondoTarjeta.jpg"> 
       <div class="front">
@@ -31,25 +34,25 @@
   </div>
   <div class="col2">
     <form action="<?=base_url?>suscripcion/guardarSuscripcion" method="POST">
-    <label>Suscribirse a</label>
-    <select name="suscribirseA">
-      <option value="Diario">Diario</option>
-      <option value="Revista">Revista</option>
-    </select>
-    <label>Tipo de suscripcion</label>
-    <select name="tipoSuscripcion">
-      <option value="Semanal">Semanal</option>
-      <option value="Mensual">Mensual</option>
-    </select><br><br>
-    <label>Numero de Tarjeta</label>
-    <input name="numTarjeta" class="number" type="text" maxlength="19" />
-    <label>Nombre del titular</label>
-    <input class="inputname" type="text" name="nombTitular"/>
-    <label>Fecha Vencimiento</label>
-    <input class="expire" type="text" placeholder="MM / YYYY" name="fecha"/>
-    <label>Numero de Seguridad</label>
-    <input name="numSeg" class="ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
-    <button class="buy" type="submit">PAGAR</button>
-</form>
+      <label>Suscribirse a</label>
+      <select name="suscribirseA">
+        <option value="Diario">Diario</option>
+        <option value="Revista">Revista</option>
+      </select>
+      <label>Tipo de suscripcion</label>
+      <select name="tipoSuscripcion">
+        <option value="Semanal">Semanal</option>
+        <option value="Mensual">Mensual</option>
+      </select><br><br>
+      <label>Numero de Tarjeta</label>
+      <input name="numTarjeta" class="number" type="text" maxlength="19" required />
+      <label>Nombre del titular</label>
+      <input class="inputname" type="text" name="nombTitular" required />
+      <label>Fecha Vencimiento</label>
+      <input class="expire" type="text" placeholder="MM / YYYY" name="fecha" required />
+      <label>Numero de Seguridad</label>
+      <input name="numSeg" class="ccv" type="text" placeholder="CVC" maxlength="3"  required />
+      <input class="buy" type="submit" value="PAGAR"/>
+  </form>
   </div>
 </div>

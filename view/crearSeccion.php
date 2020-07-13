@@ -22,7 +22,7 @@
             <input type="text" name=seccion required/><br/>
 
             <br/>
-            <input type="submit" value="Guardar nueva sección"/>
+            <input class="btnGuardarEdicion" type="submit" value="Guardar nueva sección"/>
         </form>
     </div>
 </div>

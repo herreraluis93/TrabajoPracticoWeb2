@@ -10,7 +10,32 @@
     width: 100%;
 }
 
+.fondoInicio .contenedorEditar{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 820px;
+    height: 80%;
+    margin-top: 100px;
+    margin-left: 300px;
+    position: relative;
+}
+
 .fondoInicio .contenedorInicio{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 820px;
+    height: 80%;
+    margin-top: 100px;
+    margin-left: 300px;
+    position: relative;
+}
+
+.contenedorInicio a{
+    font-size: 30px;
+    margin-left: 50px;
+    color: black;
+    font-style: bold;
+}
+
+.fondoInicio .contenedorEditar{
     background-color: rgba(255, 255, 255, 0.8);
     width: 820px;
     height: 80%;

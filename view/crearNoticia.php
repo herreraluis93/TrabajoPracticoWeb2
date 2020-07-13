@@ -31,7 +31,14 @@
                     <option value="G">
                         Gratuito
                     </option>
-                </select><br/><br/>
+                </select>
+            </div>
+
+            <div class="columnaDerecha">
+                <label for="georeferencia">Georeferencia</label>
+                <input type="text" name="georeferencia" required/><br/>
+
+                <div id="map"></div><br/>
 
                 <label for="tipoSeccion">Seccion</label>
                 <select name="seccion">
@@ -44,14 +51,7 @@
                     <?php
                         endforeach;
                     ?>
-                </select>
-            </div>
-
-            <div class="columnaDerecha">
-                <label for="georeferencia">Georeferencia</label>
-                <input type="text" name="georeferencia" required/><br/>
-
-                <div id="map"></div><br/>
+                </select><br><br>
 
                 <select name="publicacion">
                     <?php
@@ -64,7 +64,7 @@
                         endforeach;
                     ?>
                 </select><br/><br/>
-                <input type="submit" value="Crear Noticia"/>
+                <input class="btnGuardarEdicion" type="submit" value="Crear Noticia"/>
             </div>
         </form>
     </div>

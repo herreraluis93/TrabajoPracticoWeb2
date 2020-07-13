@@ -8,8 +8,6 @@
         private $tipoSuscripcion;
         // private $numTarjeta;
         // private $inputname;
-        private $fechaIni;
-        private $fechaFin;
         // private $numSeg;
 
         public function __construct(){
@@ -25,7 +23,7 @@
             }
             
             $sql = "INSERT INTO suscripcion(id_suscripcion,tipo,fecha_ini,fecha_fin,suscripto_a,id_usuario) VALUES(NULL,?,?,?,?,?)";
-            $stmt = $this->db->queryGuardarSuscripcion($sql,$this->tipoSuscripcion,$this->fechaIni,$this->fechaFin,$this->suscribirseA,$_SESSION['usuario']->id_usuario);
+            $stmt = $this->db->queryGuardarSuscripcion($sql,$this->tipoSuscripcion,$fechaIni,$fechaFin,$this->suscribirseA,$_SESSION['usuario']->id_usuario);
             $this->db->close();
             return $stmt;
         }

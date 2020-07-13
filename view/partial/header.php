@@ -26,12 +26,12 @@
     <div class="w3-top">
         <div class="w3-bar w3-blue w3-card" style="z-index:5;">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left;">InfoNete</a>
+            <a href="<?=base_url?>usuario/index" class="logo">InfoNete</a>
             <a href="<?=base_url?>usuario/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cerrar Sesión</a>
             <a href="<?=base_url?>suscripcion/suscripcion" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Suscribirse</a>
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-small">Bienvenido,<?php echo $_SESSION['usuario']->nombre ?></a> 
         </div>
-        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:45px;" id="mySidebar"><br>
+        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:56px;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-bar-block">
     <u>Secciones</u>
@@ -58,7 +58,7 @@
             <a href="<?=base_url?>seccion/crearSeccion" class="w3-bar-item w3-button w3-padding-large">Crear Seccion</a>
             <a href="<?=base_url?>contenidista/crearNoticia" class="w3-bar-item w3-button w3-padding-large">Crear Noticia</a>
             <a href="<?=base_url?>contenidista/crearPublicacion" class="w3-bar-item w3-button w3-padding-large">Crear Publicación</a>
-            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left">InfoNete</a>
+            <a href="<?=base_url?>usuario/index" class="logo" style="float:left">InfoNete</a>
         </div>
     </div>
 <?php elseif(isset($_SESSION['usuario']) && $_SESSION['usuario']->rol == 'administrador'): ?>
@@ -69,7 +69,7 @@
             <a href="<?=base_url?>publicacion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Publicación</a>
             <a href="<?=base_url?>noticia/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Noticia</a>
             <a href="<?=base_url?>seccion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Sección</a>
-            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left">InfoNete</a>
+            <a href="<?=base_url?>usuario/index" class="logo" style="float:left">InfoNete</a>
         </div>
     </div>
 <?php elseif(isset($_GET['page']) && $_GET['page'] == 'usuario' && ($_GET['action'] == 'login' || $_GET['action'] == 'registrar')): ?> 
@@ -77,10 +77,10 @@
     <div class="w3-top">
         <div class="w3-bar w3-blue w3-card" style="z-index:5;">
             <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="<?=base_url?>usuario/index" class="w3-bar-item w3-button w3-padding-large" style="float:left;">InfoNete</a>
+            <a href="<?=base_url?>usuario/index" class="logo" style="float:left;">InfoNete</a>
             <a href="<?=base_url?>usuario/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ingresar</a>
         </div>
-        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:45px;" id="mySidebar"><br>
+        <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:0;width:300px;font-weight:bold;margin-top:56px;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-bar-block">
   <u>Secciones</u>

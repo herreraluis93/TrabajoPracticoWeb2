@@ -15,7 +15,6 @@
 
 <table style="width:70%;">
   <tr>
-    <th>ID_NOTICIA</th>
     <th>TITULO</th> 
     <th>CREADOR DE NOTICIA</th>
     <th>HABILITAR/DESHABILITAR</th>
@@ -25,7 +24,6 @@
 <?php foreach($todasNoticias as $noticia): ?>
 
   <tr>
-    <td><?=$noticia[0] ?></td>
     <td><?=$noticia[1] ?></td>
     <td><?=$noticia[2] ?>, <?=$noticia[3] ?></td>
     <?php if($noticia[4] == 1): ?> 
