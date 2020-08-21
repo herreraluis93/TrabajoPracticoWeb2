@@ -46,7 +46,26 @@ class Database{
         return $resultado;
       }
 
-      
+//****************************SELECT*********************************
+    public function querySelect($sql){
+        
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+
+        //guardo el resultado en un objeto mysqli_result
+        $resultados = $stmt->get_result();
+        if($resultados->num_rows != 0){
+            $resultado = $resultados->fetch_all(MYSQLI_NUM);
+        }else{
+        $resultado = false;
+        }
+
+        $stmt->close();
+        return $resultado;
+    }
+
+
+
       //****************************SELECCIONA TODAS LAS SECCIONES*********************************
       public function querySelectSecciones($sql){
         

@@ -69,6 +69,7 @@
             <a href="<?=base_url?>publicacion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Publicación</a>
             <a href="<?=base_url?>noticia/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Noticia</a>
             <a href="<?=base_url?>seccion/habilitar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Habilitar Sección</a>
+            <a href="<?=base_url?>usuario/reporteContenidista" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Reporte de Contenidistas</a>
             <a href="<?=base_url?>usuario/index" class="logo" style="float:left">InfoNete</a>
         </div>
     </div>

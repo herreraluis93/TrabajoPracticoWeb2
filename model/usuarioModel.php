@@ -36,6 +36,16 @@
             return $resultado;
         }
 
+        public function seleccionaContenidistas(){
+            $sql = "SELECT nombre,apellido,email FROM usuario WHERE rol='contenidista'";
+            $contenidistas = $this->db->querySelect($sql);
+            $resultado = false;
+            if($contenidistas){
+                $resultado = $contenidistas;
+            }
+            return $resultado;
+        }
+
         public function setNombre($nombre){
             $this->nombre = $nombre;
         }

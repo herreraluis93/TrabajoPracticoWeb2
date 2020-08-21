@@ -81,5 +81,11 @@
             Utils::borrarSesion('usuario');
             header("Location:".base_url);
         }
+
+        public function reporteContenidista(){
+            $usuario = new UsuarioModel();
+            $contenidistas = $usuario->seleccionaContenidistas();
+            include_once("view/reporteContenidistasPdf.php");
+        }
     }
 ?>
